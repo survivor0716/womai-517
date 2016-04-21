@@ -1,0 +1,87 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  font-size: 0.24rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+html {
+  font-size: 1rem;
+}
+body {
+  height: 100%;
+  background-color: #0dcff5;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+.row {
+  text-align: center;
+}
+.row .input {
+  width: 3.88rem;
+  margin: .2rem auto;
+}
+.row .input .form-control {
+  height: 0.66rem;
+  background-color: #07aed0;
+  margin-bottom: .14rem;
+  color: #81eaff;
+  font-size: .2rem;
+  text-align: center;
+  border: 2px solid #000;
+}
+.row .input #code {
+  float: left;
+  width: 2.42rem;
+  margin-right: .04rem;
+}
+.row .input #btn {
+  float: left;
+  width: 1.42rem;
+  padding: 0;
+}
+.row .input .btn-lg {
+  height: .96rem;
+  border: .04rem solid #000000;
+  background-color: #ffd304;
+  margin-top: .68rem;
+  margin-bottom: .09rem;
+  color: #000000;
+  font-size: .34rem;
+  font-weight: bold;
+  border-radius: 40rem;
+}
+.row .input a {
+  font-size: .22rem;
+  color: #05839c;
+}
+.row .text {
+  color: #ffffff;
+  margin-top: .44rem;
+  margin-bottom: .5rem;
+}
+@media screen and (min-width: 769px) {
+  /*  .container-fluid, .row, #bg, section, footer, .mask {
+    width: 768px;
+    margin: 0 auto;
+  }*/
+  #bg {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
