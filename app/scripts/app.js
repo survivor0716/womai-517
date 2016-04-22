@@ -25,6 +25,21 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'login'
       })
+      .when('/rule', {
+        templateUrl: 'views/rule.html',
+        controller: 'RuleCtrl',
+        controllerAs: 'rule'
+      })
+      .when('/passport', {
+        templateUrl: 'views/passport.html',
+        controller: 'PassportCtrl',
+        controllerAs: 'passport'
+      })
+      .when('/bind-phone', {
+        templateUrl: 'views/bind-phone.html',
+        controller: 'BindPhoneCtrl',
+        controllerAs: 'bindPhone'
+      })
       .otherwise({
         redirectTo: '/'
       });

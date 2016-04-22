@@ -16,12 +16,6 @@ body {
   height: 100%;
   background-color: #0dcff5;
 }
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
 img {
   vertical-align: middle;
   border: 0;
@@ -29,14 +23,17 @@ img {
 input {
   line-height: normal;
 }
-.row {
+.login :-moz-placeholder {
+  color: red;
+}
+.login .row {
   text-align: center;
 }
-.row .input {
+.login .row .input {
   width: 3.88rem;
   margin: .2rem auto;
 }
-.row .input .form-control {
+.login .row .input .form-control {
   height: 0.66rem;
   background-color: #07aed0;
   margin-bottom: .14rem;
@@ -45,17 +42,17 @@ input {
   text-align: center;
   border: 2px solid #000;
 }
-.row .input #code {
+.login .row .input #code {
   float: left;
   width: 2.42rem;
   margin-right: .04rem;
 }
-.row .input #btn {
+.login .row .input #btn {
   float: left;
   width: 1.42rem;
   padding: 0;
 }
-.row .input .btn-lg {
+.login .row .input .btn-lg {
   height: .96rem;
   border: .04rem solid #000000;
   background-color: #ffd304;
@@ -66,22 +63,399 @@ input {
   font-weight: bold;
   border-radius: 40rem;
 }
-.row .input a {
+.login .row .input a {
   font-size: .22rem;
   color: #05839c;
 }
-.row .text {
+.login .row .text {
   color: #ffffff;
   margin-top: .44rem;
   margin-bottom: .5rem;
 }
+.gift {
+  /*-- section1 --*/
+  /*-- section2 --*/
+  /*-- section3--*/
+}
+.gift hr {
+  background-color: #21a9c3;
+  border: 0;
+  height: 1px;
+  margin-top: .36rem;
+}
+.gift .container.section1 .row {
+  height: 1.9rem;
+  background-color: #92efff;
+  border: .03rem solid #000000;
+  border-radius: .2rem;
+}
+.gift .container.section1 .row div {
+  height: 1.84rem;
+}
+.gift .container.section1 .row .col-xs-4 {
+  line-height: 1.8rem;
+  padding-left: .2rem;
+}
+.gift .container.section1 .row .col-xs-4 img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  border: .03rem solid #000000;
+}
+.gift .container.section1 .row .col-xs-8 {
+  padding: .1rem .16rem;
+}
+.gift .container.section1 .row .col-xs-8 p {
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: .1rem;
+}
+.gift .container.section1 .row .col-xs-8 p span {
+  color: #000000;
+  font-size: .2rem;
+}
+.gift .container.section1 .row .col-xs-8 div h2 {
+  color: #018937;
+  font-size: .3rem;
+  margin-top: .34rem;
+}
+.gift .container.section1 .row .col-xs-8 div h4 {
+  color: #018937;
+  font-size: .22rem;
+  margin-top: .1rem;
+}
+.gift .container.section1 .row .col-xs-8 .none {
+  display: none;
+}
+.gift .container.section1 .row .col-xs-8 .btn {
+  width: 2.04rem;
+  height: .53rem;
+  border: .03rem solid #000000;
+  background-color: #ffd304;
+  border-radius: .4rem;
+  font-size: .2rem;
+}
+.gift .container.section2 {
+  text-align: center;
+  /*- 注册签 -*/
+  /*- 消费签 -*/
+  /*- 分享签 -*/
+  /*- 按钮组 -*/
+}
+.gift .container.section2 .myhb {
+  width: 3.08rem;
+}
+.gift .container.section2 .row {
+  text-align: center;
+}
+.gift .container.section2 .row nav {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  -ms-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  height: .44rem;
+  margin-top: .3rem;
+  margin-bottom: .12rem;
+  padding-left: .1rem;
+}
+.gift .container.section2 .row nav i {
+  display: block;
+  width: .46rem;
+  height: .44rem;
+  background: url("../images/icon_1.png") no-repeat bottom center;
+  background-size: .46rem;
+}
+.gift .container.section2 .row nav h2 {
+  margin: 0 0 0 .05rem;
+  color: #000;
+  font-size: .3rem;
+  font-weight: bold;
+}
+.gift .container.section2 .row nav span {
+  line-height: .46rem;
+  margin-left: -0.05rem;
+  color: #0596b1;
+  letter-spacing: -1px;
+}
+.gift .container.section2 .row .col-xs-6 {
+  position: relative;
+  height: 1.4rem;
+  padding: 0;
+  margin-bottom: .15rem;
+}
+.gift .container.section2 .row .col-xs-6 .btn-sm {
+  position: absolute;
+  left: auto;
+  bottom: .07rem;
+  width: 1.06rem;
+  height: .3rem;
+  line-height: .15rem;
+  background-color: #ffe301;
+  border: .02rem solid #000000;
+  border-radius: .04rem;
+  margin-left: -0.503rem;
+  font-size: .14rem;
+}
+.gift .container.section2 .register .col-xs-6 {
+  background: url("../images/coupon_red.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .register .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .register .col-xs-6.left .btn-sm {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .register .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .register .col-xs-6.right .btn-sm {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .consume .col-xs-6 {
+  background: url("../images/coupon_blue.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .consume .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .consume .col-xs-6.left .btn-sm {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .consume .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .consume .col-xs-6.right .btn-sm {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .share .col-xs-6 {
+  background: url("../images/coupon_green.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .share .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .share .col-xs-6.left button {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .share .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .share .col-xs-6.right button {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .btn_group .btn {
+  width: 2.84rem;
+  height: .84rem;
+  background-color: #ffd304;
+  border: .04rem solid #000000;
+  border-radius: .4rem;
+  margin-top: .35rem;
+  color: #000;
+  font-size: .24rem;
+  font-weight: bold;
+}
+.gift .container.section2 .btn_group p {
+  margin-top: .08rem;
+  padding-right: .4rem;
+  font-size: .2rem;
+  color: #076d84;
+  text-align: right;
+  letter-spacing: .01rem;
+}
+.gift .container.section3 {
+  height: 5.3rem;
+}
+.gift .container.section3 .row {
+  padding-left: .15rem;
+}
+.gift .container.section3 .row h2 {
+  margin: 0;
+  color: #000000;
+  font-size: .24rem;
+}
+.gift .container.section3 .row p {
+  width: 100%;
+  margin-top: .16rem;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: .2rem;
+  overflow: hidden;
+}
+.gift .container.section3 .row p label,
+.gift .container.section3 .row p span {
+  float: left;
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: 0;
+}
+.gift .container.section3 .row p span {
+  width: 80%;
+}
+.gift .container.section3 .row div a {
+  margin-top: .4rem;
+  color: #0b7285;
+  font-size: .2rem;
+}
+.rule hr {
+  background-color: #21a9c3;
+  border: 0;
+  height: 1px;
+  margin-top: .36rem;
+}
+.rule .container.section1 {
+  height: 2rem;
+  border-bottom: 1px dashed #21a9c3;
+}
+.rule .container.section1 .row {
+  padding: 0.1rem .05rem 0;
+}
+.rule .container.section1 .row p {
+  width: 100%;
+  margin-top: .15rem;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: .2rem;
+  overflow: hidden;
+}
+.rule .container.section1 .row p label,
+.rule .container.section1 .row p span {
+  float: left;
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.rule .container.section1 .row p span {
+  width: 78%;
+}
+.rule .container.section2 {
+  border-bottom: 1px dashed #21a9c3;
+}
+.rule .container.section2 .row {
+  padding: 0.1rem .05rem 0;
+}
+.rule .container.section2 .row h2 {
+  margin: 0;
+  color: #000000;
+  font-size: .24rem;
+}
+.rule .container.section2 .row p {
+  width: 100%;
+  margin-top: .15rem;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: .2rem;
+  overflow: hidden;
+}
+.rule .container.section2 .row p label,
+.rule .container.section2 .row p span {
+  float: left;
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.rule .container.section2 .row p span {
+  width: 78%;
+}
+.bind-phone {
+  background-color: #f6f6f6;
+}
+.margin-top {
+  margin-top: .3rem;
+}
+.container-fluid {
+  padding: 0;
+  /*- 验证码-*/
+  /*- 提交 -*/
+}
+.container-fluid .input-group {
+  position: relative;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  border-top: 0.01rem solid #e8e8e8;
+  border-bottom: 0.01rem solid #e8e8e8;
+}
+.container-fluid .input-group-addon,
+.container-fluid .input-control {
+  border: none;
+  border-radius: 0;
+  background-color: #ffffff;
+  letter-spacing: .01rem;
+}
+.container-fluid .input-group-addon {
+  color: #000000;
+  font-size: .28rem;
+  padding-left: .2rem;
+  padding-right: .15rem;
+}
+.container-fluid .input-control {
+  display: block;
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  font-size: .26rem;
+  color: #555;
+  background-color: #fff;
+  font-weight: lighter;
+}
+.container-fluid .input-group-addon.btn {
+  position: absolute;
+  top: .08rem;
+  right: .2rem;
+  width: 1.7rem;
+  height: .7rem;
+  line-height: .7rem;
+  background-color: #ff860f;
+  border-radius: .04rem;
+  padding: 0;
+  color: #ffffff;
+  font-size: .26rem;
+}
+.container-fluid .input-group-addon.btn.again {
+  font-size: .24rem;
+  background-color: #00a651;
+}
+.container-fluid .input-group-addon.btn.again #time {
+  font-size: .2rem;
+}
+.container-fluid .input-group-addon.btn.active {
+  display: none;
+}
+.container-fluid .text-center .btn {
+  width: 80%;
+  height: .8rem;
+  background-color: #00a651;
+  margin: .3rem auto;
+  color: #ffffff;
+  font-size: .28rem;
+}
 @media screen and (min-width: 769px) {
-  /*  .container-fluid, .row, #bg, section, footer, .mask {
+  .container-fluid,
+  .container,
+  .row,
+  #bg,
+  section,
+  footer,
+  .mask {
     width: 768px;
     margin: 0 auto;
-  }*/
+  }
   #bg {
     width: 768px;
     margin: 0 auto;
   }
+}
+input:active,
+button:active,
+button:focus,
+input:focus {
+  outline: none;
 }

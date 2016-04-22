@@ -1,16 +1,17 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="login container-fluid">
+  <div class="row text-center">
     <img id="bg" class="img_pin" src="images/bg.jpg" alt="" width="100%"/>
     <!--<img id="bg_border" class="" src="images/fg_cloud.png" alt="" width="100%"/>-->
   </div>
   <div class="row">
-    <form ng-submit="mlogin()">
+    <form>
       <div class="input from-group">
-        <input ng-model="phone" id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照">
-        <input ng-model="code" id="code" class="form-control" type="text" placeholder="请输入验证码">
+        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照">
+        <input id="code" class="form-control" type="text" placeholder="请输入验证码">
         <button ng-click="getCode()" id="btn" type="button" class="btn form-control">获取验证码</button>
-        <button id="register" type="submit" class="btn btn-lg form-control">注册激活红包</button>
-        <a class="text-center" href="">已注册的用户点击登录</a>
+        <button ng-click="register()" id="register" type="button" class="btn btn-lg form-control">注册激活红包</button>
+        <a class="text-center" href="#/bind-phone">已注册的用户点击登录</a>
+
       </div>
     </form>
     <p class="text">下载APP享受购物每一天</p>

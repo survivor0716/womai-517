@@ -1,0 +1,94 @@
+<div class="gift container-fluid">
+  <div class="row">
+    <img id="bg" class="img_pin" src="images/bg.jpg" alt="" width="100%"/>
+  </div>
+
+  <section class="container section1">
+    <div class="row">
+      <div class="col-xs-4">
+        <img src="images/headimage.png" alt="">
+      </div>
+      <div class="col-xs-8">
+        <div>
+          <p>注册账号：<span>{{user.phone}}</span></p>
+          <p>注册时间：<span>{{user.regDate}}</span></p>
+          <!-- 注册成功 -->
+          <h2 ng-show="!user.unbind">恭喜您，登录护照成功！</h2>
+          <!-- 未绑定手机号 -->
+          <h4 ng-show="user.unbind">账号未绑定手机号，无法领取大礼包</h4>
+          <button ng-show="user.unbind" class="btn">点击绑定手机号</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="container section2">
+    <img id="" class="myhb" src="images/myhongbao.png" alt=""/>
+    <div class="row register">
+      <nav><i></i>
+        <h2>注册签</h2><span>（注册红包）</span></nav>
+      <div class="row">
+        <div class="col-xs-6 left">
+          <button class="btn-sm">已解锁</button>
+        </div>
+        <div class="col-xs-6 right">
+          <button class="btn-sm">已解锁</button>
+        </div>
+      </div>
+    </div>
+    <div class="row consume">
+      <nav><i></i>
+        <h2>消费签</h2><span>（消费红包）</span></nav>
+      <div class="row">
+        <div class="col-xs-6 left">
+          <button class="btn-sm">已解锁</button>
+        </div>
+        <div class="col-xs-6 right">
+          <button class="btn-sm">已解锁</button>
+        </div>
+      </div>
+    </div>
+    <div class="row share">
+      <nav><i></i>
+        <h2>分享签</h2><span>（分享红包）</span></nav>
+      <div class="row">
+        <div class="col-xs-6 left">
+          <button class="btn-sm">已解锁</button>
+        </div>
+        <div class="col-xs-6 right">
+          <button class="btn-sm">已解锁</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 left">
+          <button class="btn-sm">已解锁</button>
+        </div>
+        <!-- <div class="col-xs-6 right">
+             <button>已解锁</button>
+         </div>-->
+      </div>
+    </div>
+    <div class="row btn_group">
+      <div class="row">
+        <div class="col-xs-6">
+          <button ng-click="share()" type="button" class="btn">分享解锁5.17红包</button>
+        </div>
+        <div class="col-xs-6">
+          <button ng-click="download()" type="button" class="btn">下载APP 嗨购啦</button>
+          <p>点这里可直接购哦~</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <section class="container section3">
+    <div class="row">
+      <h2>护照规则</h2>
+      <p><label>注册签：</label><span>注册且手机验证可获得40元注册红包</span></p>
+      <p><label>消费签：</label><span>注册、验证且下单成功签收得60元消费红包</span></p>
+      <p><label>分享签：</label><span>分享本活动。带来新用户且新用户成功下单即可获得517分享红包</span></p>
+      <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
+    </div>
+  </section>
+</div>

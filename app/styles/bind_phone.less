@@ -1,0 +1,87 @@
+@import "all.less";
+
+@color-body: #f6f6f6;
+@height: .88rem;
+
+.bind-phone {
+  background-color: @color-body;
+}
+
+.margin-top {
+  margin-top: .3rem;
+}
+
+.container-fluid {
+  padding: 0;
+
+  .input-group {
+    position: relative;
+    height: @height;
+    line-height: @height;
+    border-top: .01rem solid @color-border;
+    border-bottom: .01rem solid @color-border;
+  }
+
+  .input-group-addon, .input-control {
+    border: none;
+    border-radius: 0;
+    background-color: #ffffff;
+    letter-spacing: .01rem;
+  }
+
+  .input-group-addon {
+    color: #000000;
+    font-size: .28rem;
+    padding-left: .2rem;
+    padding-right: .15rem;
+  }
+
+  .input-control {
+    display: block;
+    width: 100%;
+    height: @height;
+    line-height: @height;
+    font-size: .26rem;
+    color: #555;
+    background-color: #fff;
+    font-weight: lighter;
+  }
+
+  /*- 验证码-*/
+  .input-group-addon.btn {
+    //display: none;
+    position: absolute;
+    top: .08rem;
+    right: .2rem;
+    width: 1.7rem;
+    height: .7rem;
+    line-height: .7rem;
+    background-color: #ff860f;
+    border-radius: .04rem;
+    padding: 0;
+    color: #ffffff;
+    font-size: .26rem;
+  }
+
+  .input-group-addon.btn.again {
+    font-size: .24rem;
+    background-color: @color-btn-submit;
+    #time {
+      font-size: .2rem;
+    }
+  }
+
+  .input-group-addon.btn.active {
+    display: none;
+  }
+
+  /*- 提交 -*/
+  .text-center .btn {
+    width: 80%;
+    height: .8rem;
+    background-color: @color-btn-submit;
+    margin: .3rem auto;
+    color: #ffffff;
+    font-size: .28rem;
+  }
+}
