@@ -43,30 +43,30 @@ angular.module('womai517App')
       $window.location.href = '';
     };
 
-    $scope._wxConfigArray = {};
-    var postUrl = 'http://m.womai.com/517Coupon/getShare';
-    var url = encodeURIComponent($window.location.href);
-    var params = {url: url};
-    $http.post(postUrl, params)
-      .then(function (rs) {
-        var res = rs.data;
-        if (!res.errCode) {
-          $scope._wxConfigArray = res.data;
-          //wx.config({
-          //  debug    : false,
-          //  appId    : $scope._wxConfigArray.appId,
-          //  timestamp: parseInt($scope._wxConfigArray.timestamp),
-          //  nonceStr : $scope._wxConfigArray.nonceStr,
-          //  signature: $scope._wxConfigArray.signature,
-          //  jsApiList: [
-          //    // 所有要调用的 API 都要加到这个列表中
-          //    "onMenuShareTimeline",
-          //    "onMenuShareAppMessage"
-          //  ]
-          //});
-          wxshare.invokeWXShare($scope._wxConfigArray);
-        } else {
-          alert(res.errMsg);
-        }
-      });
+    //$scope._wxConfigArray = {};
+    //var postUrl = 'http://m.womai.com/517Coupon/getShare';
+    //var url = encodeURIComponent($window.location.href);
+    //var params = {url: url};
+    //$http.post(postUrl, params)
+    //  .then(function (rs) {
+    //    var res = rs.data;
+    //    if (!res.errCode) {
+    //      $scope._wxConfigArray = res.data;
+    //      //wx.config({
+    //      //  debug    : false,
+    //      //  appId    : $scope._wxConfigArray.appId,
+    //      //  timestamp: parseInt($scope._wxConfigArray.timestamp),
+    //      //  nonceStr : $scope._wxConfigArray.nonceStr,
+    //      //  signature: $scope._wxConfigArray.signature,
+    //      //  jsApiList: [
+    //      //    // 所有要调用的 API 都要加到这个列表中
+    //      //    "onMenuShareTimeline",
+    //      //    "onMenuShareAppMessage"
+    //      //  ]
+    //      //});
+    //      wxshare.invokeWXShare($scope._wxConfigArray);
+    //    } else {
+    //      alert(res.errMsg);
+    //    }
+    //  });
   });
