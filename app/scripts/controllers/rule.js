@@ -14,5 +14,5 @@ angular.module('womai517App')
       'AngularJS',
       'Karma'
     ];
-    $scope.settings.addBindPhoneCss = false;
+    $scope.settings.bodyClass = '';
   });

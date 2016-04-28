@@ -6,14 +6,14 @@
   <div class="row">
     <form>
       <div class="input from-group">
-        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照">
-        <input id="code" class="form-control" type="text" placeholder="请输入验证码">
-        <button ng-click="getCode()" id="btn" type="button" class="btn form-control">获取验证码</button>
-        <button ng-click="register()" id="register" type="button" class="btn btn-lg form-control">注册激活红包</button>
-        <a class="text-center" href="#/bind-phone">已注册的用户点击登录</a>
+        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照" ng-model="inputRegPhone">
+        <input id="code" class="form-control" type="tel" placeholder="请输入验证码" ng-model="inputRegCode">
+        <button id="btn" type="button" class="btn form-control" ng-touchstart="getRegCode()">{{settings.codeBtnText}}</button>
+        <button id="register" type="button" class="btn btn-lg form-control" ng-touchstart="submitReg()">注册激活红包</button>
+        <a class="text-center" href="#/user-login">已注册的用户点击登录</a>
 
       </div>
     </form>
-    <p class="text">下载APP享受购物每一天</p>
+    <p class="text" ng-click="download()">下载APP享受购物每一天</p>
   </div>
 </div>

@@ -1,0 +1,268 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  font-size: 0.24rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+html {
+  font-size: 1rem;
+}
+body {
+  height: 100%;
+  background-color: #0dcff5;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+.gift {
+  /*-- section1 --*/
+  /*-- section2 --*/
+  /*-- section3--*/
+}
+.gift hr {
+  background-color: #21a9c3;
+  border: 0;
+  height: 1px;
+  margin-top: .36rem;
+}
+.gift .container.section1 .row {
+  height: 1.9rem;
+  background-color: #92efff;
+  border: .03rem solid #000000;
+  border-radius: .2rem;
+}
+.gift .container.section1 .row div {
+  height: 1.84rem;
+}
+.gift .container.section1 .row .col-xs-4 {
+  line-height: 1.8rem;
+  padding-left: .2rem;
+}
+.gift .container.section1 .row .col-xs-4 img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  border: .03rem solid #000000;
+}
+.gift .container.section1 .row .col-xs-8 {
+  padding: .3rem .16rem;
+}
+.gift .container.section1 .row .col-xs-8 p {
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: .1rem;
+}
+.gift .container.section1 .row .col-xs-8 p span {
+  color: #000000;
+  font-size: .2rem;
+}
+.gift .container.section1 .row .col-xs-8 h2 {
+  color: #018937;
+  font-size: .3rem;
+  margin-top: .34rem;
+}
+.gift .container.section2 {
+  text-align: center;
+  /*- 注册签 -*/
+  /*- 消费签 -*/
+  /*- 分享签 -*/
+  /*- 按钮组 -*/
+}
+.gift .container.section2 .myhb {
+  width: 3.08rem;
+}
+.gift .container.section2 .row {
+  text-align: center;
+}
+.gift .container.section2 .row nav {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  -ms-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  height: .44rem;
+  margin-top: .3rem;
+  margin-bottom: .12rem;
+  padding-left: .1rem;
+}
+.gift .container.section2 .row nav i {
+  display: block;
+  width: .46rem;
+  height: .44rem;
+  background: url("../images/icon_1.png") no-repeat bottom center;
+  background-size: .46rem;
+}
+.gift .container.section2 .row nav h2 {
+  margin: 0 0 0 .05rem;
+  color: #000;
+  font-size: .3rem;
+  font-weight: bold;
+}
+.gift .container.section2 .row nav span {
+  line-height: .46rem;
+  margin-left: -0.05rem;
+  color: #0596b1;
+  letter-spacing: -1px;
+}
+.gift .container.section2 .row .col-xs-6 {
+  position: relative;
+  height: 1.4rem;
+  padding: 0;
+  margin-bottom: .15rem;
+}
+.gift .container.section2 .row .col-xs-6 .btn-sm {
+  position: absolute;
+  left: auto;
+  bottom: .07rem;
+  width: 1.06rem;
+  height: .3rem;
+  line-height: .15rem;
+  background-color: #ffe301;
+  border: .02rem solid #000000;
+  border-radius: .04rem;
+  margin-left: -0.503rem;
+  font-size: .14rem;
+}
+.gift .container.section2 .register .col-xs-6 {
+  background: url("../images/coupon_red.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .register .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .register .col-xs-6.left .btn-sm {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .register .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .register .col-xs-6.right .btn-sm {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .consume .col-xs-6 {
+  background: url("../images/coupon_blue.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .consume .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .consume .col-xs-6.left .btn-sm {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .consume .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .consume .col-xs-6.right .btn-sm {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .share .col-xs-6 {
+  background: url("../images/coupon_green.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .share .col-xs-6.left {
+  background-position-x: right;
+}
+.gift .container.section2 .share .col-xs-6.left button {
+  margin-left: -0.491rem;
+}
+.gift .container.section2 .share .col-xs-6.right {
+  background-position-x: left;
+}
+.gift .container.section2 .share .col-xs-6.right button {
+  margin-left: -0.62rem;
+}
+.gift .container.section2 .btn_group .btn {
+  width: 2.84rem;
+  height: .84rem;
+  background-color: #ffd304;
+  border: .04rem solid #000000;
+  border-radius: .4rem;
+  margin-top: .35rem;
+  color: #000;
+  font-size: .24rem;
+  font-weight: bold;
+}
+.gift .container.section2 .btn_group p {
+  margin-top: .08rem;
+  padding-right: .4rem;
+  font-size: .2rem;
+  color: #076d84;
+  text-align: right;
+  letter-spacing: .01rem;
+}
+.gift .container.section3 {
+  height: 5.3rem;
+}
+.gift .container.section3 .row {
+  padding-left: .15rem;
+}
+.gift .container.section3 .row h2 {
+  margin: 0;
+  color: #000000;
+  font-size: .24rem;
+}
+.gift .container.section3 .row p {
+  width: 100%;
+  margin-top: .16rem;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: .2rem;
+  overflow: hidden;
+}
+.gift .container.section3 .row p label,
+.gift .container.section3 .row p span {
+  float: left;
+  color: #000000;
+  font-size: .2rem;
+  margin-bottom: 0;
+}
+.gift .container.section3 .row p span {
+  width: 80%;
+}
+.gift .container.section3 .row div a {
+  margin-top: .4rem;
+  color: #0b7285;
+  font-size: .2rem;
+}
+@media screen and (min-width: 769px) {
+  .container-fluid,
+  .container,
+  .row,
+  #bg,
+  section,
+  footer,
+  .mask {
+    width: 768px;
+    margin: 0 auto;
+  }
+  #bg {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+input:active,
+button:active,
+button:focus,
+input:focus {
+  outline: none;
+}

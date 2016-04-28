@@ -1,80 +1,113 @@
-@import "all.less";
+@import "all";
+
+.rule.container-fluid {
+  padding: .1rem .2rem 0;
+  background: url("../images/rulebg_4.png") no-repeat 3.5rem -.6rem,
+  url("../images/rulebg_1.png") no-repeat 2.5rem 1.22rem,
+  url("../images/rulebg_2.png") no-repeat -.6rem 5rem,
+  url("../images/rulebg_3.png") no-repeat 5rem 7rem,
+  url("../images/rulebg_6.png") no-repeat 4.8rem 10.8rem,
+  url("../images/rulebg_4.png") no-repeat 2.1rem 11rem,
+  url("../images/rulebg_7.png") no-repeat -.55rem 11.2rem;
+}
 
 .rule {
-  hr {
-    background-color: #21a9c3;
-    border: 0;
-    height: 1px;
-    margin-top: .36rem;
+  .padding-top {
+    padding-top: .1rem;
   }
-
-  .container.section1 {
-    height: 2rem;
-    border-bottom: 1px dashed #21a9c3;
-
+  .container {
     .row {
-      padding: 0.1rem .05rem 0;
-
+      background: url("../images/border.png") repeat-x bottom center;
+      background-size: .11rem;
+      h2 {
+        margin: 0;
+        margin-left: -.13rem;
+        color: #000000;
+        font-size: .24rem;
+      }
+      h4 {
+        margin: 0;
+        margin-top: .08rem;
+        color: #021b20;
+        font-size: .16rem;
+      }
       p {
         width: 100%;
         margin-top: .15rem;
         margin-bottom: 0;
-        color: #000000;
+        color: #021b20;
         font-size: .2rem;
         overflow: hidden;
-
         label, span {
           float: left;
-          color: #000000;
+          display: block;
+          color: #021b20;
           font-size: .2rem;
           margin-bottom: 0;
           font-weight: normal;
         }
-
         label {
-          //width: 17%;
+          width: 17%;
         }
-
         span {
-          width: 78%;
+          width: 83%;
+        }
+      }
+    }
+  }
+  .container.section1 {
+    .row {
+      height: 1.5rem;
+      p {
+        span {
+          width: 80%;
+          text-align: left;
         }
       }
     }
   }
   .container.section2 {
-    border-bottom: 1px dashed #21a9c3;
-
     .row {
+      padding: .1rem 0;
+      label {
+        width: 20%;
+      }
+      span {
+        width: 80%;
+      }
+    }
+  }
+  .container.section3 {
+    .row {
+      padding-bottom: .1rem;
+      p {
+        margin-top: .1rem;
+      }
+      label {
+        width: 25%;
+      }
+      span {
+        width: 75%;
+      }
+    }
+  }
+  .container.section4 {
+    .row {
+      height: 2.4rem;
       padding: 0.1rem .05rem 0;
-
+      background: none;
       h2 {
         margin: 0;
-        color: #000000;
-        font-size: .24rem;
+        color: #016f86;
+        font-size: .16rem;
       }
-
       p {
-        width: 100%;
-        margin-top: .15rem;
-        margin-bottom: 0;
-        color: #000000;
-        font-size: .2rem;
-        overflow: hidden;
-
+        margin-top: .1rem;
+        color: #016f86;
+        font-size: .16rem;
         label, span {
-          float: left;
-          color: #000000;
-          font-size: .2rem;
-          margin-bottom: 0;
-          font-weight: normal;
-        }
-
-        label {
-          //width: 17%;
-        }
-        
-        span {
-          width: 78%;
+          color: #016f86;
+          font-size: .16rem;
         }
       }
     }

@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles/index.css">
   <!-- endbuild -->
 </head>
-<body ng-app="womai517App" ng-controller="ApplicationCtrl" ng-class="{'bind-phone': settings.addBindPhoneCss}">
+<body ng-app="womai517App" ng-controller="ApplicationCtrl" ng-class="settings.bodyClass">
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -51,6 +51,8 @@
 <script src="scripts/controllers/rule.js"></script>
 <script src="scripts/controllers/passport.js"></script>
 <script src="scripts/controllers/bind-phone.js"></script>
+<script src="scripts/services/wxshare.js"></script>
+<script src="scripts/controllers/user-login.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -14,10 +14,14 @@ angular.module('womai517App')
       'AngularJS',
       'Karma'
     ];
-    $scope.settings.addBindPhoneCss = true;
+    $scope.settings.bodyClass = 'bind_phone';
 
-    $scope.submitBindPhone = function () {
-      $log.debug('invoke submit interface');
-      $window.alert('invoke submit interface');
+    $scope.getBindCode = function () {
+
+    };
+
+    $scope.submitBind = function () {
+      $log.debug('invoke submitBind interface');
+      $window.alert('invoke submitBind interface');
     };
   });

@@ -40,6 +40,11 @@ angular
         controller: 'BindPhoneCtrl',
         controllerAs: 'bindPhone'
       })
+      .when('/user-login', {
+        templateUrl: 'views/user-login.html',
+        controller: 'UserLoginCtrl',
+        controllerAs: 'userLogin'
+      })
       .otherwise({
         redirectTo: '/'
       });

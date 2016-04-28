@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Microsoft YaHei";
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   font-size: 0.24rem;
   font-weight: normal;
   text-decoration: none;
@@ -16,12 +16,21 @@ body {
   height: 100%;
   background-color: #0dcff5;
 }
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
 img {
   vertical-align: middle;
   border: 0;
 }
 input {
   line-height: normal;
+}
+.row- {
+  margin: 0;
 }
 .login :-moz-placeholder {
   color: red;
@@ -83,51 +92,56 @@ input {
   height: 1px;
   margin-top: .36rem;
 }
-.gift .container.section1 .row {
+.gift .container.section1 .box {
   height: 1.9rem;
   background-color: #92efff;
   border: .03rem solid #000000;
   border-radius: .2rem;
 }
-.gift .container.section1 .row div {
+.gift .container.section1 .box div {
   height: 1.84rem;
 }
-.gift .container.section1 .row .col-xs-4 {
+.gift .container.section1 .box .col-xs-4 {
   line-height: 1.8rem;
   padding-left: .2rem;
 }
-.gift .container.section1 .row .col-xs-4 img {
+.gift .container.section1 .box .col-xs-4 img {
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 1.6rem;
   border: .03rem solid #000000;
 }
-.gift .container.section1 .row .col-xs-8 {
+.gift .container.section1 .box .col-xs-8 {
   padding: .1rem .16rem;
 }
-.gift .container.section1 .row .col-xs-8 p {
+.gift .container.section1 .box .col-xs-8 p {
   color: #000000;
   font-size: .2rem;
   margin-bottom: .1rem;
 }
-.gift .container.section1 .row .col-xs-8 p span {
+.gift .container.section1 .box .col-xs-8 p span {
   color: #000000;
   font-size: .2rem;
 }
-.gift .container.section1 .row .col-xs-8 div h2 {
+.gift .container.section1 .box .col-xs-8 h2 {
   color: #018937;
   font-size: .3rem;
   margin-top: .34rem;
 }
-.gift .container.section1 .row .col-xs-8 div h4 {
+.gift .container.section1 .box .col-xs-8 div h2 {
+  color: #018937;
+  font-size: .3rem;
+  margin-top: .34rem;
+}
+.gift .container.section1 .box .col-xs-8 div h4 {
   color: #018937;
   font-size: .22rem;
   margin-top: .1rem;
 }
-.gift .container.section1 .row .col-xs-8 .none {
+.gift .container.section1 .box .col-xs-8 .none {
   display: none;
 }
-.gift .container.section1 .row .col-xs-8 .btn {
+.gift .container.section1 .box .col-xs-8 .btn {
   width: 2.04rem;
   height: .53rem;
   border: .03rem solid #000000;
@@ -145,10 +159,10 @@ input {
 .gift .container.section2 .myhb {
   width: 3.08rem;
 }
-.gift .container.section2 .row {
+.gift .container.section2 .box {
   text-align: center;
 }
-.gift .container.section2 .row nav {
+.gift .container.section2 .box nav {
   display: -moz-box;
   display: -webkit-box;
   display: -ms-box;
@@ -164,32 +178,32 @@ input {
   margin-bottom: .12rem;
   padding-left: .1rem;
 }
-.gift .container.section2 .row nav i {
+.gift .container.section2 .box nav i {
   display: block;
   width: .46rem;
   height: .44rem;
   background: url("../images/icon_1.png") no-repeat bottom center;
   background-size: .46rem;
 }
-.gift .container.section2 .row nav h2 {
+.gift .container.section2 .box nav h2 {
   margin: 0 0 0 .05rem;
   color: #000;
   font-size: .3rem;
   font-weight: bold;
 }
-.gift .container.section2 .row nav span {
+.gift .container.section2 .box nav span {
   line-height: .46rem;
   margin-left: -0.05rem;
   color: #0596b1;
   letter-spacing: -1px;
 }
-.gift .container.section2 .row .col-xs-6 {
+.gift .container.section2 .box .col-xs-6 {
   position: relative;
   height: 1.4rem;
   padding: 0;
   margin-bottom: .15rem;
 }
-.gift .container.section2 .row .col-xs-6 .btn-sm {
+.gift .container.section2 .box .col-xs-6 .btn-sm {
   position: absolute;
   left: auto;
   bottom: .07rem;
@@ -303,69 +317,7 @@ input {
   color: #0b7285;
   font-size: .2rem;
 }
-.rule hr {
-  background-color: #21a9c3;
-  border: 0;
-  height: 1px;
-  margin-top: .36rem;
-}
-.rule .container.section1 {
-  height: 2rem;
-  border-bottom: 1px dashed #21a9c3;
-}
-.rule .container.section1 .row {
-  padding: 0.1rem .05rem 0;
-}
-.rule .container.section1 .row p {
-  width: 100%;
-  margin-top: .15rem;
-  margin-bottom: 0;
-  color: #000000;
-  font-size: .2rem;
-  overflow: hidden;
-}
-.rule .container.section1 .row p label,
-.rule .container.section1 .row p span {
-  float: left;
-  color: #000000;
-  font-size: .2rem;
-  margin-bottom: 0;
-  font-weight: normal;
-}
-.rule .container.section1 .row p span {
-  width: 78%;
-}
-.rule .container.section2 {
-  border-bottom: 1px dashed #21a9c3;
-}
-.rule .container.section2 .row {
-  padding: 0.1rem .05rem 0;
-}
-.rule .container.section2 .row h2 {
-  margin: 0;
-  color: #000000;
-  font-size: .24rem;
-}
-.rule .container.section2 .row p {
-  width: 100%;
-  margin-top: .15rem;
-  margin-bottom: 0;
-  color: #000000;
-  font-size: .2rem;
-  overflow: hidden;
-}
-.rule .container.section2 .row p label,
-.rule .container.section2 .row p span {
-  float: left;
-  color: #000000;
-  font-size: .2rem;
-  margin-bottom: 0;
-  font-weight: normal;
-}
-.rule .container.section2 .row p span {
-  width: 78%;
-}
-.bind-phone {
+.bind_phone {
   background-color: #f6f6f6;
 }
 .margin-top {
@@ -391,6 +343,7 @@ input {
   letter-spacing: .01rem;
 }
 .container-fluid .input-group-addon {
+  height: .88rem;
   color: #000000;
   font-size: .28rem;
   padding-left: .2rem;
@@ -437,10 +390,103 @@ input {
   color: #ffffff;
   font-size: .28rem;
 }
+.rule.container-fluid {
+  padding: .1rem .2rem 0;
+  background: url("../images/rulebg_4.png") no-repeat 3.5rem -0.6rem, url("../images/rulebg_1.png") no-repeat 2.5rem 1.22rem, url("../images/rulebg_2.png") no-repeat -0.6rem 5rem, url("../images/rulebg_3.png") no-repeat 5rem 7rem, url("../images/rulebg_6.png") no-repeat 4.8rem 10.8rem, url("../images/rulebg_4.png") no-repeat 2.1rem 11rem, url("../images/rulebg_7.png") no-repeat -0.55rem 11.2rem;
+}
+.rule .padding-top {
+  padding-top: .1rem;
+}
+.rule .container .row {
+  background: url("../images/border.png") repeat-x bottom center;
+  background-size: .11rem;
+}
+.rule .container .row h2 {
+  margin: 0;
+  margin-left: -0.13rem;
+  color: #000000;
+  font-size: .24rem;
+}
+.rule .container .row h4 {
+  margin: 0;
+  margin-top: .08rem;
+  color: #021b20;
+  font-size: .16rem;
+}
+.rule .container .row p {
+  width: 100%;
+  margin-top: .15rem;
+  margin-bottom: 0;
+  color: #021b20;
+  font-size: .2rem;
+  overflow: hidden;
+}
+.rule .container .row p label,
+.rule .container .row p span {
+  float: left;
+  display: block;
+  color: #021b20;
+  font-size: .2rem;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+.rule .container .row p label {
+  width: 17%;
+}
+.rule .container .row p span {
+  width: 83%;
+}
+.rule .container.section1 .row {
+  height: 1.5rem;
+}
+.rule .container.section1 .row p span {
+  width: 80%;
+  text-align: left;
+}
+.rule .container.section2 .row {
+  padding: .1rem 0;
+}
+.rule .container.section2 .row label {
+  width: 20%;
+}
+.rule .container.section2 .row span {
+  width: 80%;
+}
+.rule .container.section3 .row {
+  padding-bottom: .1rem;
+}
+.rule .container.section3 .row p {
+  margin-top: .1rem;
+}
+.rule .container.section3 .row label {
+  width: 25%;
+}
+.rule .container.section3 .row span {
+  width: 75%;
+}
+.rule .container.section4 .row {
+  height: 2.4rem;
+  padding: 0.1rem .05rem 0;
+  background: none;
+}
+.rule .container.section4 .row h2 {
+  margin: 0;
+  color: #016f86;
+  font-size: .16rem;
+}
+.rule .container.section4 .row p {
+  margin-top: .1rem;
+  color: #016f86;
+  font-size: .16rem;
+}
+.rule .container.section4 .row p label,
+.rule .container.section4 .row p span {
+  color: #016f86;
+  font-size: .16rem;
+}
 @media screen and (min-width: 769px) {
   .container-fluid,
   .container,
-  .row,
   #bg,
   section,
   footer,

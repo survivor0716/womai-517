@@ -1,5 +1,10 @@
 @media screen and (min-width: 769px) {
-  .container-fluid, .container, #bg, section, footer, .mask {
+  .container-fluid,
+  .container,
+  #bg,
+  section,
+  footer,
+  .mask {
     width: 768px;
     margin: 0 auto;
   }
@@ -8,6 +13,9 @@
     margin: 0 auto;
   }
 }
-input:active,button:active,button:focus,input:focus{
+input:active,
+button:active,
+button:focus,
+input:focus {
   outline: none;
 }

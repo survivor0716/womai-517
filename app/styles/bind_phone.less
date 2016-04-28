@@ -1,9 +1,7 @@
-@import "all.less";
-
 @color-body: #f6f6f6;
 @height: .88rem;
 
-.bind-phone {
+.bind_phone {
   background-color: @color-body;
 }
 
@@ -13,7 +11,6 @@
 
 .container-fluid {
   padding: 0;
-
   .input-group {
     position: relative;
     height: @height;
@@ -21,21 +18,19 @@
     border-top: .01rem solid @color-border;
     border-bottom: .01rem solid @color-border;
   }
-
   .input-group-addon, .input-control {
     border: none;
     border-radius: 0;
     background-color: #ffffff;
     letter-spacing: .01rem;
   }
-
   .input-group-addon {
+    height: .88rem;
     color: #000000;
     font-size: .28rem;
     padding-left: .2rem;
     padding-right: .15rem;
   }
-
   .input-control {
     display: block;
     width: 100%;
@@ -62,7 +57,6 @@
     color: #ffffff;
     font-size: .26rem;
   }
-
   .input-group-addon.btn.again {
     font-size: .24rem;
     background-color: @color-btn-submit;
@@ -70,11 +64,9 @@
       font-size: .2rem;
     }
   }
-
   .input-group-addon.btn.active {
     display: none;
   }
-
   /*- 提交 -*/
   .text-center .btn {
     width: 80%;
