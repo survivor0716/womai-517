@@ -8,7 +8,7 @@
  * Controller of the womai517App
  */
 angular.module('womai517App')
-  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, wxshare) {
+  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, $location, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,6 +17,9 @@ angular.module('womai517App')
     $scope.settings = {};
     $scope.user = {};
     $scope.settings.bodyClass = '';
+    $scope.settings.oldUser = $location.search().old || '';
+    $scope.settings.promotionId = $location.search().promotionId;
+    $log.debug($scope.settings.promotionId);
 
     $scope.share = function () {
       $bridge(function (bridge) {
@@ -44,7 +47,7 @@ angular.module('womai517App')
     };
 
     //$scope._wxConfigArray = {};
-    //var postUrl = 'http://m.womai.com/517Coupon/getShare';
+    //var postUrl = 'http://517passport-01.womai.test.paymew.com/getShare';
     //var url = encodeURIComponent($window.location.href);
     //var params = {url: url};
     //$http.post(postUrl, params)

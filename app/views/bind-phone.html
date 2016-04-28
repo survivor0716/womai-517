@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="input-group input-group-lg margin-top">
+  <div class="row input-group input-group-lg margin-top">
     <span class="input-group-addon ">绑定手机：</span>
     <input type="tel" class="input-control" placeholder="请输入手机号" ng-model="inputBindPhone">
   </div>
@@ -7,13 +7,12 @@
     <!--<span class="input-group-addon ">验证码：</span>-->
     <!--<input type="text" class="input-control " placeholder="请输入验证码">-->
   <!--</div>-->
-  <div class="input-group input-group-lg margin-top">
+  <div class="row input-group input-group-lg margin-top">
     <span class="input-group-addon ">验证码：</span>
     <input type="tel" class="input-control" placeholder="请输入验证码" ng-model="inputBindCode">
-    <span class="input-group-addon btn" ng-touchstart="getBindCode()">获取验证码</span>
-    <span class="input-group-addon btn again active">重新获取(<span id="time">50s</span>)</span>
+    <span class="input-group-addon btn" ng-click="getBindCode()" ng-disabled="disableBindCodeBtn">{{bindCodeBtnText}}</span>
   </div>
   <div class="text-center">
-    <button class="btn" type="button" ng-touchstart="submitBind()">提交</button>
+    <button class="btn" type="button" ng-click="submitBind()">提交</button>
   </div>
 </div>
