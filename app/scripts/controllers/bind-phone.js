@@ -30,7 +30,7 @@ angular.module('womai517App')
         phone: $scope.inputBindPhone,
         token: $scope.user.token
       };
-      $http.post('http://517passport-01.womai.test.paymew.com/bindCode', params)
+      $http.post('http://517passport.womai.test.paymew.com/bindCode', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;
@@ -71,7 +71,7 @@ angular.module('womai517App')
         code: $scope.inputRegCode,
         token: $scope.user.token
       };
-      $http.post('http://517passport-01.womai.test.paymew.com/bindPhone', params)
+      $http.post('http://517passport.womai.test.paymew.com/bindPhone', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;

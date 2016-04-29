@@ -25,7 +25,7 @@ angular.module('womai517App')
         promotionId: $scope.user.promotionId
       };
       $log.debug(params);
-      $http.post('http://517passport-01.womai.test.paymew.com/login', params)
+      $http.post('http://517passport.womai.test.paymew.com/login', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;

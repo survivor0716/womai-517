@@ -226,11 +226,19 @@ input {
 .gift .container.section2 .register .col-xs-6.left .btn-sm {
   margin-left: -0.491rem;
 }
+.gift .container.section2 .register .col-xs-6.left.coupon1 {
+  background: url("../images/coupon_1.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
 .gift .container.section2 .register .col-xs-6.right {
   background-position-x: left;
 }
 .gift .container.section2 .register .col-xs-6.right .btn-sm {
   margin-left: -0.62rem;
+}
+.gift .container.section2 .register .col-xs-6.right.coupon2 {
+  background: url("../images/coupon_2.png") no-repeat bottom;
+  background-size: 3.04rem;
 }
 .gift .container.section2 .consume .col-xs-6 {
   background: url("../images/coupon_blue.png") no-repeat bottom;
@@ -242,11 +250,19 @@ input {
 .gift .container.section2 .consume .col-xs-6.left .btn-sm {
   margin-left: -0.491rem;
 }
+.gift .container.section2 .consume .col-xs-6.left.coupon3 {
+  background: url("../images/coupon_3.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
 .gift .container.section2 .consume .col-xs-6.right {
   background-position-x: left;
 }
 .gift .container.section2 .consume .col-xs-6.right .btn-sm {
   margin-left: -0.62rem;
+}
+.gift .container.section2 .consume .col-xs-6.right.coupon4 {
+  background: url("../images/coupon_4.png") no-repeat bottom;
+  background-size: 3.04rem;
 }
 .gift .container.section2 .share .col-xs-6 {
   background: url("../images/coupon_green.png") no-repeat bottom;
@@ -258,11 +274,23 @@ input {
 .gift .container.section2 .share .col-xs-6.left button {
   margin-left: -0.491rem;
 }
+.gift .container.section2 .share .col-xs-6.left.coupon5 {
+  background: url("../images/coupon_5.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
+.gift .container.section2 .share .col-xs-6.left.coupon7 {
+  background: url("../images/coupon_7.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
 .gift .container.section2 .share .col-xs-6.right {
   background-position-x: left;
 }
 .gift .container.section2 .share .col-xs-6.right button {
   margin-left: -0.62rem;
+}
+.gift .container.section2 .share .col-xs-6.right.coupon6 {
+  background: url("../images/coupon_6.png") no-repeat bottom;
+  background-size: 3.04rem;
 }
 .gift .container.section2 .btn_group .btn {
   width: 2.84rem;

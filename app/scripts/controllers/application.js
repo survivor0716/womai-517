@@ -15,7 +15,7 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings = {};
-    $log.debug(typeof $location.search().p);
+    $log.debug($location.search().p);
     $scope.user = {
       username   : '',
       regTime    : '',
@@ -30,6 +30,7 @@ angular.module('womai517App')
       current    : '',
       promotionId: $location.search().p || 212928
     };
+    $log.debug($scope.user);
 
     $scope.settings.bodyClass = '';
 
@@ -57,37 +58,37 @@ angular.module('womai517App')
     $scope.download = function () {
       var QId;
       switch($scope.user.promotionId) {
-        case 212925:  //PC端
+        case '212925':  //PC端
           QId = 3127;
           break;
-        case 213124:  //APP端
+        case '213124':  //APP端
           QId = 3128;
           break;
-        case 212926:  //百度
+        case '212926':  //百度
           QId = 3129;
           break;
-        case 212927:  //豆果美食
+        case '212927':  //豆果美食
           QId = 3130;
           break;
-        case 213125:  //新闻信息流
+        case '213125':  //新闻信息流
           QId = 3131;
           break;
-        case 213126:  //公众号
+        case '213126':  //公众号
           QId = 3132;
           break;
-        case 213127:  //黄渤请你吃菜
+        case '213127':  //黄渤请你吃菜
           QId = 3133;
           break;
-        case 212928:  //H5
+        case '212928':  //H5
           QId = 3134;
           break;
         default :
           QId = 212928;
       }
-      $window.location.href = 'http://www.womai.com/sale/app/app,jsp?QId=' + QId;
+      $window.location.href = 'http://www.womai.com/sale/app/app.jsp?QId=' + QId;
     };
 
-    var postUrl = 'http://517passport-01.womai.test.paymew.com/getShare';
+    var postUrl = 'http://m.womai.com/517Passport/getShare';
     var url = encodeURIComponent($window.location.href);
     var params = {url: url};
     $http.post(postUrl, params)
@@ -107,7 +108,7 @@ angular.module('womai517App')
               "onMenuShareAppMessage"
             ]
           });
-          wxshare.invokeWXShare(_wxConfigArray, $scope.user);
+          wxshare.invokeWXShare($scope.user);
         } else {
           alert(res.errMsg);
         }

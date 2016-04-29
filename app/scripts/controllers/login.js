@@ -25,7 +25,7 @@ angular.module('womai517App')
         $window.alert('请输入正确的手机号码');
         return;
       }
-      $http.post('http://517passport-01.womai.test.paymew.com/sendCode', {phone: $scope.inputRegPhone})
+      $http.post('http://517passport.womai.test.paymew.com/sendCode', {phone: $scope.inputRegPhone})
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;
@@ -64,10 +64,10 @@ angular.module('womai517App')
       var params = {
         phone: $scope.inputRegPhone,
         code: $scope.inputRegCode,
-        old: encodeURIComponent($scope.user.old),
+        old: $scope.user.old,
         promotionId: $scope.user.promotionId
       };
-      $http.post('http://517passport-01.womai.test.paymew.com/fastReg', params)
+      $http.post('http://517passport.womai.test.paymew.com/fastReg', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;

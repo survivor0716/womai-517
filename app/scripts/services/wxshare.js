@@ -30,7 +30,7 @@ angular.module('womai517App')
             return $q.reject(response.data.errMsg);
           });
       },
-      invokeWXShare: function (_wxConfigArray, data) {
+      invokeWXShare: function (data) {
         //微信分享
         //wx.config({
         //  appId    : _wxConfigArray.appId,
@@ -50,12 +50,12 @@ angular.module('womai517App')
           }
         });
 
-        var params = '?old=' + data.old + 'promotionId=' + data.promotionId;
+        var params = '&old=' + encodeURIComponent(data.current) + 'p=' + data.promotionId;
 
         var shareData = {
           title : '517护照', // 分享标题
           desc  : '全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！', // 分享描述
-          link  : 'http://m.womai.com/517Passport/web' + params, // 分享链接
+          link  : 'http://m.womai.com/517Passport/web/#/' + params, // 分享链接
           imgUrl: 'http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png'  // 分享图标
         };
 

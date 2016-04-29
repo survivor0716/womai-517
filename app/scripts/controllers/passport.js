@@ -16,15 +16,13 @@ angular.module('womai517App')
     ];
     $scope.settings.bodyClass = '';
 
-    //wxshare.invokeWXShare($scope.user);
-
     $scope.getPassport = function () {
       $log.debug('invoke getPassport interface');
       var params = {
         token: $scope.user.token
       };
       $log.debug(params);
-      $http.post('http://517passport-01.womai.test.paymew.com/getPassport', params)
+      $http.post('http://517passport.womai.test.paymew.com/getPassport', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;
@@ -37,15 +35,16 @@ angular.module('womai517App')
               $scope.user.regState = user.regState;
               $scope.user.cosState = user.cosState;
               $scope.user.shareState = user.shareState;
+              wxshare.invokeWXShare($scope.user);
             } else {
               $window.alert(data.errMsg);
               $location.path('/');
             }
           } else {
-            $window.alert('网络异常，请重试');
+            $window.alert('网络异常');
           }
         }, function (response) {
-          $window.alert('网络异常，请重试');
+          $window.alert('网络异常');
         });
     };
     $scope.getPassport();
