@@ -8,7 +8,7 @@
  * Controller of the womai517App
  */
 angular.module('womai517App')
-  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, $location, wxshare) {
+  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, $location, $route, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

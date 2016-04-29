@@ -50,7 +50,7 @@ angular.module('womai517App')
           }
         });
 
-        var params = '&old=' + encodeURIComponent(data.current) + 'p=' + data.promotionId;
+        var params = '?old=' + encodeURIComponent(data.current) + 'p=' + data.promotionId;
 
         var shareData = {
           title : '517护照', // 分享标题

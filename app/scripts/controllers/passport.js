@@ -52,6 +52,47 @@ angular.module('womai517App')
     $scope.goToBind = function () {
       $location.path('/bind-phone');
     };
+
+    $scope.goToCoupon = function (id) {
+      var params = '?sourceId=' + $scope.user.promotionId;
+      switch (id) {
+        case 1: //美食券
+          if ($scope.user.regState) {
+            $window.location.href = 'http://www.womai.com/index-31000-0.htm' + params;
+          }
+          break;
+        case 2: //生鲜券
+          if ($scope.user.regState) {
+            $window.location.href = 'http://www.womai.com/Sort-31000-64306.htm' + params;
+          }
+          break;
+        case 3: //进口券
+          if ($scope.user.cosState) {
+            $window.location.href = 'http://www.womai.com/Sort-31000-66102.htm' + params;
+          }
+          break;
+        case 4: //红酒券
+          if ($scope.user.cosState) {
+            $window.location.href = 'http://jiu.womai.com/jiu/index-31000-0.htm' + params;
+          }
+          break;
+        case 5: //美食券
+          if ($scope.user.shareState) {
+            $window.location.href = 'http://www.womai.com/index-31000-0.htm' + params;
+          }
+          break;
+        case 6: //生鲜券
+          if ($scope.user.shareState) {
+            $window.location.href = 'http://www.womai.com/Sort-31000-64306.htm' + params;
+          }
+          break;
+        case 7: //黄金纯酿
+          if ($scope.user.shareState) {
+            $window.location.href = 'http://www.womai.com/Product-0-10353885.htm' + params;
+          }
+          break;
+      }
+    };
     //$scope.share = function () {
     //  $log.debug('Share button click');
     //  $window.alert('Share button click');

@@ -27,10 +27,10 @@
       <nav><i></i>
         <h2>注册签</h2><span>（注册红包）</span></nav>
       <div class="row">
-        <div class="col-xs-6 left coupon1">
+        <div class="col-xs-6 left coupon1" ng-click="goToCoupon(1)">
           <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
-        <div class="col-xs-6 right coupon2">
+        <div class="col-xs-6 right coupon2" ng-click="goToCoupon(2)">
           <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
@@ -39,10 +39,10 @@
       <nav><i></i>
         <h2>消费签</h2><span>（消费红包）</span></nav>
       <div class="row">
-        <div class="col-xs-6 left coupon3">
+        <div class="col-xs-6 left coupon3" ng-click="goToCoupon(3)">
           <button class="btn-sm">{{user.cosState ? '已解锁' : '未解锁'}}</button>
         </div>
-        <div class="col-xs-6 right coupon4">
+        <div class="col-xs-6 right coupon4" ng-click="goToCoupon(4)">
           <button class="btn-sm">{{user.cosState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
@@ -51,15 +51,15 @@
       <nav><i></i>
         <h2>分享签</h2><span>（分享红包）</span></nav>
       <div class="row">
-        <div class="col-xs-6 left coupon5">
+        <div class="col-xs-6 left coupon5" ng-click="goToCoupon(5)">
           <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
-        <div class="col-xs-6 right coupon6">
+        <div class="col-xs-6 right coupon6" ng-click="goToCoupon(6)">
           <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
       <div class="row ">
-        <div class="col-xs-6 left coupon7">
+        <div class="col-xs-6 left coupon7" ng-click="goToCoupon(7)">
           <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
         <!-- <div class="col-xs-6 right">
