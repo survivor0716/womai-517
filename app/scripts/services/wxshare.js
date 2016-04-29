@@ -11,9 +11,16 @@ angular.module('womai517App')
   .factory('wxshare', function ($log, $window, $http, $q, $location) {
     // Service logic
     // ...
+    var secretCode = null;
 
     // Public API here
     return {
+      saveSecretCode: function (code) {
+        secretCode = code;
+      },
+      isAccessable: function () {
+        return secretCode == 'dxy2014';
+      },
       getShareData: function () {
         $window.alert($location.url());
         return $http.post('http://m.womai.com/517Coupon/getShare', {url: $location.url()})

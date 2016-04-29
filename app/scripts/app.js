@@ -21,10 +21,15 @@ angular
     $logProvider.debugEnabled(true);
 
     $routeProvider
-      .when('/', {
+      .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controllerAs: 'login',
+        resolve: {
+          secret: function($q, wxshare) {
+            return wxshare.isAccessable() ? $q.resolve() : $q.reject({secret: 'noSecretCode'});
+          }
+        }
       })
       .when('/rule', {
         templateUrl: 'views/rule.html',
@@ -34,21 +39,50 @@ angular
       .when('/passport', {
         templateUrl: 'views/passport.html',
         controller: 'PassportCtrl',
-        controllerAs: 'passport'
+        controllerAs: 'passport',
+        resolve: {
+          secret: function($q, wxshare) {
+            return wxshare.isAccessable() ? $q.resolve() : $q.reject({secret: 'noSecretCode'});
+          }
+        }
       })
       .when('/bind-phone', {
         templateUrl: 'views/bind-phone.html',
         controller: 'BindPhoneCtrl',
-        controllerAs: 'bindPhone'
+        controllerAs: 'bindPhone',
+        resolve: {
+          secret: function($q, wxshare) {
+            return wxshare.isAccessable() ? $q.resolve() : $q.reject({secret: 'noSecretCode'});
+          }
+        }
       })
       .when('/user-login', {
         templateUrl: 'views/user-login.html',
         controller: 'UserLoginCtrl',
-        controllerAs: 'userLogin'
+        controllerAs: 'userLogin',
+        resolve: {
+          secret: function($q, wxshare) {
+            return wxshare.isAccessable() ? $q.resolve() : $q.reject({secret: 'noSecretCode'});
+          }
+        }
+      })
+      .when('/', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function ($log, $rootScope, $route, $location) {
+    $rootScope.$on('$routeChangeError', function (event, current, previous, rejection) {
+      //$log.debug('reload');
+      //$route.reload();
+      if(rejection.secret) {
+        $location.path('/');
+      }
+    });
   });
 
 function convertTransformRequest($httpProvider) {

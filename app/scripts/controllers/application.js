@@ -15,7 +15,26 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings = {};
+    $scope.settings.activityUnlock = false;
+    $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '注册解锁红包' : '5月3日开启';
+    $scope.settings.unlockActivity = function () {
+      if(wxshare.isAccessable()) {
+        $location.path('/login');
+      }
+      if($scope.settings.activityUnlock) {
+        $location.path('/login');
+      } else {
+        $log.debug('未到活动开启时间');
+        $window.alert('未到活动开启时间');
+      }
+    };
+
     $log.debug($location.search().p);
+
+    //TODO：调试用秘密参数
+    $log.debug($location.search().secretcode);
+    wxshare.saveSecretCode($location.search().secretcode);
+
     $scope.user = {
       username   : '',
       regTime    : '',

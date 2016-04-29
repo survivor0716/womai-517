@@ -81,6 +81,34 @@ input {
   margin-top: .44rem;
   margin-bottom: .5rem;
 }
+.login.hongbao .row .input.hongbao {
+  margin: -0.5rem auto 0.2rem;
+}
+.login.hongbao .row .input.hongbao .btn-lg {
+  height: .96rem;
+  border: .04rem solid #616E76;
+  background-color: #7F939A;
+  margin-top: .1rem;
+  margin-bottom: .09rem;
+  color: #E7F9FD;
+  font-size: .34rem;
+  font-weight: bold;
+  border-radius: 40rem;
+}
+.login.hongbao .row .input.hongbao .unlock {
+  border-color: #000;
+  background-color: #fe2d02;
+}
+.login.hongbao .row .text {
+  color: #ffffff;
+  margin-top: -0.05rem;
+  margin-bottom: .1rem;
+  font-size: 5px;
+}
+.login.hongbao .row .text a {
+  color: #C9FFFF;
+  font-size: .2rem;
+}
 .gift {
   /*-- section1 --*/
   /*-- section2 --*/
