@@ -32,6 +32,70 @@ input {
 .row- {
   margin: 0;
 }
+#mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+#mask .box {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: auto;
+  margin: 0 auto;
+}
+#mask .box .icon {
+  position: absolute;
+  top: 2.2rem;
+  right: .3rem;
+  z-index: 1;
+  cursor: pointer;
+  opacity: .6;
+}
+#mask .box .icon img {
+  width: .3rem;
+}
+#mask .box .icon:active {
+  opacity: 1;
+}
+#mask .box ul {
+  position: relative;
+  top: 2rem;
+  width: 6rem;
+  height: 3.5rem;
+  background-color: #fff;
+  border-radius: .1rem;
+  margin: 0 auto;
+  padding-top: 1px;
+  list-style: none;
+}
+#mask .box ul li {
+  width: 3.31rem;
+  height: .6rem;
+  margin: 0 auto;
+  margin-top: .6rem;
+  font-size: .28rem;
+  line-height: .6rem;
+  text-align: center;
+}
+#mask .box ul li img {
+  width: 2.02rem;
+}
+#mask .box ul li div {
+  margin-top: .1rem;
+}
+#mask .box ul li div p {
+  height: .4rem;
+  margin: 0;
+  color: #8d8e91;
+  font-size: .26rem;
+}
 .rule.container-fluid {
   padding: .1rem .2rem 0;
   background: url("../images/rulebg_4.png") no-repeat 3.5rem -0.6rem, url("../images/rulebg_1.png") no-repeat 2.5rem 1.22rem, url("../images/rulebg_2.png") no-repeat -0.6rem 5rem, url("../images/rulebg_3.png") no-repeat 5rem 7rem, url("../images/rulebg_6.png") no-repeat 4.8rem 10.8rem, url("../images/rulebg_4.png") no-repeat 2.1rem 11rem, url("../images/rulebg_7.png") no-repeat -0.55rem 11.2rem;

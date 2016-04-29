@@ -20,12 +20,14 @@ angular.module('womai517App')
     $scope.settings.unlockActivity = function () {
       if(wxshare.isAccessable()) {
         $location.path('/login');
+        return;
       }
       if($scope.settings.activityUnlock) {
         $location.path('/login');
       } else {
         $log.debug('未到活动开启时间');
-        $window.alert('未到活动开启时间');
+        //$window.alert('未到活动开启时间');
+        $scope.settings.openAlertPanel('未到活动开启时间');
       }
     };
 

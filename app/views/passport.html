@@ -26,7 +26,7 @@
     <div class="box register">
       <nav><i></i>
         <h2>注册签</h2><span>（注册红包）</span></nav>
-      <div class="row">
+      <div class="row" ng-if="user.isNewV">
         <div class="col-xs-6 left coupon1" ng-click="goToCoupon(1)">
           <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="box consume" ng-show="user.isNewV">
+    <div class="box consume" ng-if="user.isNewV">
       <nav><i></i>
         <h2>消费签</h2><span>（消费红包）</span></nav>
       <div class="row">
@@ -70,7 +70,7 @@
     <div class="   box btn_group">
       <div class="row">
         <div class="col-xs-6">
-          <button class="btn" type="button" ng-click="share()">分享解锁5.17红包</button>
+          <button class="btn" type="button" ng-click="share()">分享解锁417元红包</button>
         </div>
         <div class="col-xs-6">
           <button class="btn" type="button" ng-click="download()">下载APP 嗨购啦</button>
@@ -87,6 +87,12 @@
       <p><label>注册签：</label><span>注册且手机验证可获得40元注册红包</span></p>
       <p><label>消费签：</label><span>注册、验证且下单成功签收得60元消费红包</span></p>
       <p><label>分享签：</label><span>分享本活动。带来新用户且新用户成功下单即可获得517分享红包</span></p>
+      <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
+    </div>
+    <div class="row" ng-if="user.mobileV">
+      <h2>护照规则</h2>
+      <p><label>注册签：</label><span>参与活动可获得10元注册红包</span></p>
+      <p><label>分享签：</label><span>分享本活动。带来新用户且新客成功下单即可获得417分享红包</span></p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>
   </section>

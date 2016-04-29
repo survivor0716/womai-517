@@ -20,28 +20,33 @@ angular.module('womai517App')
 
     $scope.getRegCode = function () {
       $log.debug('invoke getRegCode interface');
-      var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
-      if (!reg.test($scope.inputRegPhone)) {
-        $window.alert('请输入正确的手机号码');
-        return;
-      }
+      //var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+      //if (!reg.test($scope.inputRegPhone)) {
+      //  //$window.alert('请输入正确的手机号码');
+      //  $scope.settings.openAlertPanel('请输入正确的手机号码');
+      //  return;
+      //}
       $http.post('http://517passport.womai.test.paymew.com/sendCode', {phone: $scope.inputRegPhone})
         .then(function (response) {
           if (typeof response.data == 'object') {
             var data = response.data;
             $log.debug('sendCode: ', data);
             if (!data.errCode) {
-              $window.alert('已发送验证码');
+              //$window.alert('已发送验证码');
+              $scope.settings.openAlertPanel('已发送验证码');
               $scope.settings.disableRegCodeBtn = true;
               $scope.countdown();
             } else {
-              $window.alert(data.errMsg);
+              //$window.alert(data.errMsg);
+              $scope.settings.openAlertPanel(data.errMsg);
             }
           } else {
             $window.alert('网络异常，请重新尝试');
+            //$scope.settings.openAlertPanel('网络异常，请重新尝试');
           }
         }, function (response) {
-          $window.alert('网络异常，请重试');
+          $window.alert('网络异常，请重新尝试');
+          //$scope.settings.openAlertPanel('网络异常，请重新尝试');
         });
     };
 
@@ -79,12 +84,14 @@ angular.module('womai517App')
               $scope.user.token = user.token;
               $scope.user.sso = user.sso;
               $location.path('/passport');
+            } else{
+              $scope.settings.openAlertPanel(data.errMsg);
             }
           } else {
-
+            $window.alert('网络异常，请重新尝试');
           }
         }, function (response) {
-
+          $window.alert('网络异常，请重新尝试');
         });
     };
   });

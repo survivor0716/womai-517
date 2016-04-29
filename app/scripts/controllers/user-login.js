@@ -45,7 +45,7 @@ angular.module('womai517App')
             $window.alert('网络异常，请重新尝试');
           }
         }, function (response) {
-          $window.alert('网络异常，请重试');
+          $window.alert('网络异常，请重新尝试');
         });
     };
   });

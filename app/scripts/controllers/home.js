@@ -14,4 +14,5 @@ angular.module('womai517App')
       'AngularJS',
       'Karma'
     ];
+    $scope.settings.bodyClass = '';
   });

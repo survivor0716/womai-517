@@ -23,7 +23,8 @@ angular.module('womai517App')
       $log.debug('invoke getBindCode interface');
       var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
       if (!reg.test($scope.inputBindPhone)) {
-        $window.alert('请输入正确的手机号码');
+        //$window.alert('请输入正确的手机号码');
+        $scope.settings.openAlertPanel('请输入正确的手机号码');
         return;
       }
       var params = {
@@ -36,7 +37,8 @@ angular.module('womai517App')
             var data = response.data;
             $log.debug('sendCode: ', data);
             if (!data.errCode) {
-              $window.alert('已发送验证码');
+              //$window.alert('已发送验证码');
+              $scope.settings.openAlertPanel('已发送验证码');
               $scope.settings.disableBindCodeBtn = true;
               $scope.countdown();
             } else {
@@ -44,9 +46,11 @@ angular.module('womai517App')
             }
           } else {
             $window.alert('网络异常，请重新尝试');
+            //$scope.settings.openAlertPanel('网络异常，请重新尝试');
           }
         }, function (response) {
-          $window.alert('网络异常，请重试');
+          $window.alert('网络异常，请重新尝试');
+          //$scope.settings.openAlertPanel('网络异常，请重新尝试');
         });
     };
 
