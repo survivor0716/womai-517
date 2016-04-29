@@ -18,11 +18,11 @@ angular.module('womai517App')
     $scope.settings.activityUnlock = false;
     $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '注册解锁红包' : '5月3日开启';
     $scope.settings.unlockActivity = function () {
-      if(wxshare.isAccessable()) {
+      if (wxshare.isAccessable()) {
         $location.path('/login');
         return;
       }
-      if($scope.settings.activityUnlock) {
+      if ($scope.settings.activityUnlock) {
         $location.path('/login');
       } else {
         $log.debug('未到活动开启时间');
@@ -41,7 +41,7 @@ angular.module('womai517App')
       username   : '',
       regTime    : '',
       mobileV    : false,
-      isNewV     : true,
+      isNewV     : false,
       regState   : false,
       cosState   : false,
       shareState : false,
@@ -57,28 +57,27 @@ angular.module('womai517App')
 
     $scope.share = function () {
       $bridge(function (bridge) {
-        $("#btnShare").on('click', function () {
-          var shareData = {
-            data: {
-              title         : "吃货召集令",
-              commonImageUrl: "http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png",
-              webUrl        : "http://m.womai.com/517Coupon/web",
-              commonText    : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
-              weiboContent  : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
-              copyContent   : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！"
-            }
-          };
-          bridge.callHandler('shareToApp', shareData, function (json) {
-            $window.alert(json);
-          });
-
+        var params = '?old=' + encodeURIComponent($scope.user.current) + 'p=' + $scope.user.promotionId;
+        var shareData = {
+          data: {
+            title         : "红包护照吃天下",
+            commonImageUrl: "http://womai2016.cdn.paymew.com/Icon/icon_womai_517Passport.png",
+            webUrl        : "http://m.womai.com/517Coupon/web" + params,
+            commonText    : "517元免费吃？黄渤在吃货届又搞了个大新闻！",
+            weiboContent  : "517元免费吃？黄渤在吃货届又搞了个大新闻！",
+            copyContent   : "517元免费吃？黄渤在吃货届又搞了个大新闻！"
+          }
+        };
+        bridge.callHandler('shareToApp', shareData, function (json) {
+          $window.alert(json);
         });
       });
+      $scope.settings.openAlertPanel('此时应弹出分享遮罩');
     };
 
     $scope.download = function () {
       var QId;
-      switch($scope.user.promotionId) {
+      switch ($scope.user.promotionId) {
         case '212925':  //PC端
           QId = 3127;
           break;
@@ -131,7 +130,7 @@ angular.module('womai517App')
           });
           wxshare.invokeWXShare($scope.user);
         } else {
-          alert(res.errMsg);
+          $window.alert(res.errMsg);
         }
       });
   });

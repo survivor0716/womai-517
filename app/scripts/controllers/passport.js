@@ -56,6 +56,11 @@ angular.module('womai517App')
     $scope.goToCoupon = function (id) {
       var params = '?sourceId=' + $scope.user.promotionId + '&ssotoken=' + $scope.user.sso;
       switch (id) {
+        case 0: //美食券
+          if ($scope.user.regState) {
+            $window.location.href = 'http://m.womai.com/index.shtml' + params;
+          }
+          break;
         case 1: //美食券
           if ($scope.user.regState) {
             $window.location.href = 'http://m.womai.com/index.shtml' + params;

@@ -334,6 +334,10 @@ input {
 .gift .container.section2 .register .col-xs-6.left .btn-sm {
   margin-left: -0.491rem;
 }
+.gift .container.section2 .register .col-xs-6.left.coupon0 {
+  background: url("../images/coupon_0.png") no-repeat bottom;
+  background-size: 3.04rem;
+}
 .gift .container.section2 .register .col-xs-6.left.coupon1 {
   background: url("../images/coupon_1.png") no-repeat bottom;
   background-size: 3.04rem;
@@ -412,8 +416,9 @@ input {
   font-weight: bold;
 }
 .gift .container.section2 .btn_group p {
-  margin-top: .08rem;
-  padding-right: .4rem;
+  margin-top: .2rem;
+}
+.gift .container.section2 .btn_group p a {
   font-size: .2rem;
   color: #076d84;
   text-align: right;

@@ -39,7 +39,8 @@ angular.module('womai517App')
               $log.debug($scope.user);
               $location.path('/passport');
             } else {
-              $window.alert(data.errMsg);
+              //$window.alert(data.errMsg);
+              $scope.settings.openAlertPanel(data.errMsg);
             }
           } else {
             $window.alert('网络异常，请重新尝试');

@@ -9,10 +9,15 @@
       </div>
       <div class="col-xs-8">
 
-        <p>注册账号：<span>{{user.username}}</span></p>
-        <p>注册时间：<span>{{user.regTime}}</span></p>
+        <p>注册账号：
+          <span>{{user.username}}</span>
+        </p>
+        <p>注册时间：
+          <span>{{user.regTime}}</span>
+        </p>
         <!-- 注册成功 -->
         <h2 ng-if="user.mobileV">恭喜您，登录护照成功！</h2>
+
         <div ng-if="!user.mobileV">
           <h4>账号未绑定手机号，无法领取大礼包</h4>
           <button class="btn" ng-click="goToBind()">点击绑定手机号</button>
@@ -23,10 +28,26 @@
   <hr>
   <section class="container section2">
     <img id="" class="myhb" src="images/myhongbao.png" alt=""/>
-    <div class="box register">
+
+    <div class="box register" ng-if="user.mobileV">
       <nav><i></i>
-        <h2>注册签</h2><span>（注册红包）</span></nav>
-      <div class="row" ng-if="user.isNewV">
+
+        <h2>注册签</h2>
+        <span>（注册红包）</span>
+      </nav>
+      <div class="row">
+        <div class="col-xs-6 left coupon0" ng-click="goToCoupon(0)">
+          <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="box register" ng-if="user.isNewV">
+      <nav><i></i>
+
+        <h2>注册签</h2>
+        <span>（注册红包）</span>
+      </nav>
+      <div class="row">
         <div class="col-xs-6 left coupon1" ng-click="goToCoupon(1)">
           <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
@@ -37,7 +58,10 @@
     </div>
     <div class="box consume" ng-if="user.isNewV">
       <nav><i></i>
-        <h2>消费签</h2><span>（消费红包）</span></nav>
+
+        <h2>消费签</h2>
+        <span>（消费红包）</span>
+      </nav>
       <div class="row">
         <div class="col-xs-6 left coupon3" ng-click="goToCoupon(3)">
           <button class="btn-sm">{{user.cosState ? '已解锁' : '未解锁'}}</button>
@@ -49,7 +73,10 @@
     </div>
     <div class="box share">
       <nav><i></i>
-        <h2>分享签</h2><span>（分享红包）</span></nav>
+
+        <h2>分享签</h2>
+        <span>（分享红包）</span>
+      </nav>
       <div class="row">
         <div class="col-xs-6 left coupon5" ng-click="goToCoupon(5)">
           <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
@@ -67,14 +94,14 @@
          </div>-->
       </div>
     </div>
-    <div class="   box btn_group">
+    <div class="box btn_group">
       <div class="row">
         <div class="col-xs-6">
           <button class="btn" type="button" ng-click="share()">分享解锁417元红包</button>
         </div>
         <div class="col-xs-6">
           <button class="btn" type="button" ng-click="download()">下载APP 嗨购啦</button>
-          <p>点这里可直接购哦~</p>
+          <p><a href="http://m.womai.com">点这里可直接购哦~</a></p>
         </div>
       </div>
     </div>
@@ -82,18 +109,36 @@
   <hr>
 
   <section class="container section3">
-    <div class="row">
+    <div class="row" ng-if="user.isNewV">
       <h2>护照规则</h2>
-      <p><label>注册签：</label><span>注册且手机验证可获得40元注册红包</span></p>
-      <p><label>消费签：</label><span>注册、验证且下单成功签收得60元消费红包</span></p>
-      <p><label>分享签：</label><span>分享本活动。带来新用户且新用户成功下单即可获得517分享红包</span></p>
+
+      <p>
+        <label>注册签：</label>
+        <span>注册且手机验证可获得40元注册红包</span>
+      </p>
+      <p>
+        <label>消费签：</label>
+        <span>注册、验证且下单成功签收得60元消费红包</span>
+      </p>
+      <p>
+        <label>分享签：</label>
+        <span>分享本活动。带来新用户且新用户成功下单即可获得517分享红包</span>
+      </p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>
     <div class="row" ng-if="user.mobileV">
       <h2>护照规则</h2>
-      <p><label>注册签：</label><span>参与活动可获得10元注册红包</span></p>
-      <p><label>分享签：</label><span>分享本活动。带来新用户且新客成功下单即可获得417分享红包</span></p>
+
+      <p>
+        <label>注册签：</label>
+        <span>参与活动可获得10元注册红包</span>
+      </p>
+      <p>
+        <label>分享签：</label>
+        <span>分享本活动。带来新用户且新客成功下单即可获得417分享红包</span>
+      </p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>
   </section>
+  <div id="mask" class="mask" ng-show="settings.isShowAlertPanel" alert-window=""></div>
 </div>

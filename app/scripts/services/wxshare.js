@@ -60,10 +60,10 @@ angular.module('womai517App')
         var params = '?old=' + encodeURIComponent(data.current) + 'p=' + data.promotionId;
 
         var shareData = {
-          title : '517护照', // 分享标题
-          desc  : '全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！', // 分享描述
+          title : '517元免费吃？黄渤在吃货届又搞了个大新闻！', // 分享标题
+          desc  : '这才是吃货届最新炫富方式！517元霸王餐，有种说不出的欣喜～', // 分享描述
           link  : 'http://m.womai.com/517Passport/web/#/' + params, // 分享链接
-          imgUrl: 'http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png'  // 分享图标
+          imgUrl: 'http://womai2016.cdn.paymew.com/Icon/icon_womai_517Passport.png'  // 分享图标
         };
 
         wx.ready(function () {
