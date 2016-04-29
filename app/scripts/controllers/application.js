@@ -15,6 +15,7 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings = {};
+    $log.debug(typeof $location.search().p);
     $scope.user = {
       username   : '',
       regTime    : '',
@@ -27,12 +28,10 @@ angular.module('womai517App')
       sso        : '',
       old        : $location.search().old || '',
       current    : '',
-      promotionId: $location.search().promotionId || 212928
+      promotionId: $location.search().p || 212928
     };
 
     $scope.settings.bodyClass = '';
-    $scope.settings.oldUser = $location.search().old || '';
-    $scope.settings.promotionId = $location.search().promotionId || 212928;
 
     $scope.share = function () {
       $bridge(function (bridge) {
@@ -56,7 +55,36 @@ angular.module('womai517App')
     };
 
     $scope.download = function () {
-      $window.location.href = '';
+      var QId;
+      switch($scope.user.promotionId) {
+        case 212925:  //PC端
+          QId = 3127;
+          break;
+        case 213124:  //APP端
+          QId = 3128;
+          break;
+        case 212926:  //百度
+          QId = 3129;
+          break;
+        case 212927:  //豆果美食
+          QId = 3130;
+          break;
+        case 213125:  //新闻信息流
+          QId = 3131;
+          break;
+        case 213126:  //公众号
+          QId = 3132;
+          break;
+        case 213127:  //黄渤请你吃菜
+          QId = 3133;
+          break;
+        case 212928:  //H5
+          QId = 3134;
+          break;
+        default :
+          QId = 212928;
+      }
+      $window.location.href = 'http://www.womai.com/sale/app/app,jsp?QId=' + QId;
     };
 
     var postUrl = 'http://517passport-01.womai.test.paymew.com/getShare';
