@@ -6,7 +6,7 @@
   <div class="row">
     <form>
       <div class="input from-group">
-        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照" ng-model="inputRegPhone">
+        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照" maxlength="11" ng-model="inputRegPhone">
         <input id="code" class="form-control" type="tel" placeholder="请输入验证码" ng-model="inputRegCode">
         <button id="btn" type="button" class="btn form-control" ng-click="getRegCode()" ng-disabled="settings.disableRegCodeBtn">{{settings.regCodeBtnText}}</button>
         <button id="register" type="button" class="btn btn-lg form-control" ng-click="submitReg()">注册激活红包</button>

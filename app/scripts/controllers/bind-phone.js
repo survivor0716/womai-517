@@ -78,6 +78,7 @@ angular.module('womai517App')
             $log.debug('fastReg: ', data);
             if (!data.errCode) {
               $window.alert(data.errMsg);
+              $scope.user.username = $scope.inputRegPhone;
               $location.path('/passport');
             }
           } else {

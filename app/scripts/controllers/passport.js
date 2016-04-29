@@ -8,7 +8,7 @@
  * Controller of the womai517App
  */
 angular.module('womai517App')
-  .controller('PassportCtrl', function ($scope, $log, $window) {
+  .controller('PassportCtrl', function ($scope, $log, $window, $location, $http, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,14 +16,43 @@ angular.module('womai517App')
     ];
     $scope.settings.bodyClass = '';
 
-    $scope.user.phone = '18500000001';
-    $scope.user.regDate = '2016/4/20';
-    $scope.user.unbind = false;
-    $scope.user.isNew = true;
-    $scope.user.registerLockStatus = true;
-    $scope.user.consumeLockStatus = true;
-    $scope.user.shareLockStatus = true;
+    //wxshare.invokeWXShare($scope.user);
 
+    $scope.getPassport = function () {
+      $log.debug('invoke getPassport interface');
+      var params = {
+        token: $scope.user.token
+      };
+      $log.debug(params);
+      $http.post('http://517passport-01.womai.test.paymew.com/getPassport', params)
+        .then(function (response) {
+          if (typeof response.data == 'object') {
+            var data = response.data;
+            $log.debug('getPassport: ', data);
+            if (!data.errCode) {
+              var user = data.data;
+              $scope.user.mobileV = user.mobileV;
+              $scope.user.isNewV = user.isNewV;
+              $scope.user.regTime = user.regTime;
+              $scope.user.regState = user.regState;
+              $scope.user.cosState = user.cosState;
+              $scope.user.shareState = user.shareState;
+            } else {
+              $window.alert(data.errMsg);
+              $location.path('/');
+            }
+          } else {
+            $window.alert('网络异常，请重试');
+          }
+        }, function (response) {
+          $window.alert('网络异常，请重试');
+        });
+    };
+    $scope.getPassport();
+
+    $scope.goToBind = function () {
+      $location.path('/bind-phone');
+    };
     //$scope.share = function () {
     //  $log.debug('Share button click');
     //  $window.alert('Share button click');

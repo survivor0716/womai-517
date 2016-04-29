@@ -27,7 +27,27 @@
 
 <!-- Add your site or application content here -->
 <div ng-view=""></div>
+<div><p>user.regTime: {{user.regTime}}</p>
 
+  <p>user.mobileV: {{user.mobileV}}</p>
+
+  <p>user.isNewV: {{user.isNewV}}</p>
+
+  <p>user.regState: {{user.regState}}</p>
+
+  <p>user.cosState: {{user.cosState}}</p>
+
+  <p>user.shareState: {{user.shareState}}</p>
+
+  <p>user.token: {{user.token}}</p>
+
+  <p>user.sso: {{user.sso}}</p>
+
+  <p>user.old: {{user.old}}</p>
+
+  <p>user.current: {{user.current}}</p>
+
+  <p>user.promotionId: {{user.promotionId}}</p></div>
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -41,7 +61,11 @@
 <script src="bower_components/ng-fastclick/dist/index.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
-
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/modernizr-2.8.3.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/bridge.min.js"></script>
+<script src="js/adapt.js"></script>
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/modernizr-2.8.3.min.js"></script>
 <script src="scripts/helper.js"></script>

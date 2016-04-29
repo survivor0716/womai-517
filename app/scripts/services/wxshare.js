@@ -30,19 +30,19 @@ angular.module('womai517App')
             return $q.reject(response.data.errMsg);
           });
       },
-      invokeWXShare: function (_wxConfigArray) {
+      invokeWXShare: function (_wxConfigArray, data) {
         //微信分享
-        wx.config({
-          appId    : _wxConfigArray.appId,
-          timestamp: parseInt(_wxConfigArray.timestamp),
-          nonceStr : _wxConfigArray.nonceStr,
-          signature: _wxConfigArray.signature,
-          jsApiList: [
-            // 所有要调用的 API 都要加到这个列表中
-            "onMenuShareTimeline",
-            "onMenuShareAppMessage"
-          ]
-        });
+        //wx.config({
+        //  appId    : _wxConfigArray.appId,
+        //  timestamp: parseInt(_wxConfigArray.timestamp),
+        //  nonceStr : _wxConfigArray.nonceStr,
+        //  signature: _wxConfigArray.signature,
+        //  jsApiList: [
+        //    // 所有要调用的 API 都要加到这个列表中
+        //    "onMenuShareTimeline",
+        //    "onMenuShareAppMessage"
+        //  ]
+        //});
 
         wx.error(function (res) {
           for (var i in res) {
@@ -50,10 +50,12 @@ angular.module('womai517App')
           }
         });
 
+        var params = '?old=' + data.old + 'promotionId=' + data.promotionId;
+
         var shareData = {
-          title : '吃货召集令', // 分享标题
+          title : '517护照', // 分享标题
           desc  : '全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！', // 分享描述
-          link  : 'http://m.womai.com/517Coupon/web', // 分享链接
+          link  : 'http://m.womai.com/517Passport/web' + params, // 分享链接
           imgUrl: 'http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png'  // 分享图标
         };
 

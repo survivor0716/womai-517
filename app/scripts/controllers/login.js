@@ -64,8 +64,8 @@ angular.module('womai517App')
       var params = {
         phone: $scope.inputRegPhone,
         code: $scope.inputRegCode,
-        old: $scope.settings.oldUser,
-        promotionId: $scope.settings.promotionId
+        old: encodeURIComponent($scope.user.old),
+        promotionId: $scope.user.promotionId
       };
       $http.post('http://517passport-01.womai.test.paymew.com/fastReg', params)
         .then(function (response) {
@@ -73,15 +73,11 @@ angular.module('womai517App')
             var data = response.data;
             $log.debug('fastReg: ', data);
             if (!data.errCode) {
-              $scope.user.mobileV = data.mobileV;
-              $scope.user.isNewV = data.isNewV;
-              $scope.user.regTime = data.regTime;
-              $scope.user.regState = data.regState;
-              $scope.user.cosState = data.cosState;
-              $scope.user.shareState = data.shareState;
-              $scope.user.token = data.token;
-              $scope.user.sso = data.sso;
-              $scope.user.old = data.old;
+              var user = data.data;
+              $scope.user.username = $scope.inputRegPhone;
+              $scope.user.current = user.old;
+              $scope.user.token = user.token;
+              $scope.user.sso = user.sso;
               $location.path('/passport');
             }
           } else {

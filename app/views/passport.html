@@ -9,13 +9,13 @@
       </div>
       <div class="col-xs-8">
 
-        <p>注册账号：<span>{{user.phone}}</span></p>
-        <p>注册时间：<span>{{user.regDate}}</span></p>
+        <p>注册账号：<span>{{user.username}}</span></p>
+        <p>注册时间：<span>{{user.regTime}}</span></p>
         <!-- 注册成功 -->
-        <h2>恭喜您，登录护照成功！</h2>
-        <div style="display: none">
+        <h2 ng-if="user.mobileV">恭喜您，登录护照成功！</h2>
+        <div ng-if="!user.mobileV">
           <h4>账号未绑定手机号，无法领取大礼包</h4>
-          <button class="btn">点击绑定手机号</button>
+          <button class="btn" ng-click="goToBind()">点击绑定手机号</button>
         </div>
       </div>
     </div>
@@ -28,22 +28,22 @@
         <h2>注册签</h2><span>（注册红包）</span></nav>
       <div class="row">
         <div class="col-xs-6 left">
-          <button class="btn-sm">{{user.registerLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
         <div class="col-xs-6 right">
-          <button class="btn-sm">{{user.registerLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.regState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
     </div>
-    <div class="box consume" ng-show="user.isNew">
+    <div class="box consume" ng-show="user.isNewV">
       <nav><i></i>
         <h2>消费签</h2><span>（消费红包）</span></nav>
       <div class="row">
         <div class="col-xs-6 left">
-          <button class="btn-sm">{{user.consumeLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.cosState ? '已解锁' : '未解锁'}}</button>
         </div>
         <div class="col-xs-6 right">
-          <button class="btn-sm">{{user.consumeLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.cosState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
     </div>
@@ -52,15 +52,15 @@
         <h2>分享签</h2><span>（分享红包）</span></nav>
       <div class="row">
         <div class="col-xs-6 left">
-          <button class="btn-sm">{{user.shareLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
         <div class="col-xs-6 right">
-          <button class="btn-sm">{{user.shareLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
       </div>
       <div class="row ">
         <div class="col-xs-6 left">
-          <button class="btn-sm">{{user.shareLockStatus ? '已解锁' : '未解锁'}}</button>
+          <button class="btn-sm">{{user.shareState ? '已解锁' : '未解锁'}}</button>
         </div>
         <!-- <div class="col-xs-6 right">
              <button>已解锁</button>

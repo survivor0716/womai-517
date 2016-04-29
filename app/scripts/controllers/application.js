@@ -15,11 +15,24 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings = {};
-    $scope.user = {};
+    $scope.user = {
+      username   : '',
+      regTime    : '',
+      mobileV    : false,
+      isNewV     : true,
+      regState   : false,
+      cosState   : false,
+      shareState : false,
+      token      : '',
+      sso        : '',
+      old        : $location.search().old || '',
+      current    : '',
+      promotionId: $location.search().promotionId || 212928
+    };
+
     $scope.settings.bodyClass = '';
     $scope.settings.oldUser = $location.search().old || '';
-    $scope.settings.promotionId = $location.search().promotionId;
-    $log.debug($scope.settings.promotionId);
+    $scope.settings.promotionId = $location.search().promotionId || 212928;
 
     $scope.share = function () {
       $bridge(function (bridge) {
@@ -46,30 +59,29 @@ angular.module('womai517App')
       $window.location.href = '';
     };
 
-    //$scope._wxConfigArray = {};
-    //var postUrl = 'http://517passport-01.womai.test.paymew.com/getShare';
-    //var url = encodeURIComponent($window.location.href);
-    //var params = {url: url};
-    //$http.post(postUrl, params)
-    //  .then(function (rs) {
-    //    var res = rs.data;
-    //    if (!res.errCode) {
-    //      $scope._wxConfigArray = res.data;
-    //      //wx.config({
-    //      //  debug    : false,
-    //      //  appId    : $scope._wxConfigArray.appId,
-    //      //  timestamp: parseInt($scope._wxConfigArray.timestamp),
-    //      //  nonceStr : $scope._wxConfigArray.nonceStr,
-    //      //  signature: $scope._wxConfigArray.signature,
-    //      //  jsApiList: [
-    //      //    // 所有要调用的 API 都要加到这个列表中
-    //      //    "onMenuShareTimeline",
-    //      //    "onMenuShareAppMessage"
-    //      //  ]
-    //      //});
-    //      wxshare.invokeWXShare($scope._wxConfigArray);
-    //    } else {
-    //      alert(res.errMsg);
-    //    }
-    //  });
+    var postUrl = 'http://517passport-01.womai.test.paymew.com/getShare';
+    var url = encodeURIComponent($window.location.href);
+    var params = {url: url};
+    $http.post(postUrl, params)
+      .then(function (rs) {
+        var res = rs.data;
+        if (!res.errCode) {
+          var _wxConfigArray = res.data;
+          wx.config({
+            debug    : false,
+            appId    : _wxConfigArray.appId,
+            timestamp: parseInt(_wxConfigArray.timestamp),
+            nonceStr : _wxConfigArray.nonceStr,
+            signature: _wxConfigArray.signature,
+            jsApiList: [
+              // 所有要调用的 API 都要加到这个列表中
+              "onMenuShareTimeline",
+              "onMenuShareAppMessage"
+            ]
+          });
+          wxshare.invokeWXShare(_wxConfigArray, $scope.user);
+        } else {
+          alert(res.errMsg);
+        }
+      });
   });
