@@ -15,7 +15,7 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings = {};
-    $scope.settings.activityUnlock = false;
+    $scope.settings.activityUnlock = true;
     $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '注册解锁红包' : '5月3日开启';
     $scope.settings.unlockActivity = function () {
       if (wxshare.isAccessable()) {

@@ -29,7 +29,7 @@
   <section class="container section2">
     <img id="" class="myhb" src="images/myhongbao.png" alt=""/>
 
-    <div class="box register" ng-if="user.mobileV">
+    <div class="box register" ng-if="!user.isNewV">
       <nav><i></i>
 
         <h2>注册签</h2>
@@ -126,7 +126,7 @@
       </p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>
-    <div class="row" ng-if="user.mobileV">
+    <div class="row" ng-if="!user.isNewV">
       <h2>护照规则</h2>
 
       <p>
