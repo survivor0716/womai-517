@@ -19,7 +19,8 @@ angular.module('womai517App')
         secretCode = code;
       },
       isAccessable: function () {
-        return secretCode == 'dxy2014';
+        //return secretCode == 'dxy2014';
+        return true;
       },
       getShareData: function () {
         $window.alert($location.url());

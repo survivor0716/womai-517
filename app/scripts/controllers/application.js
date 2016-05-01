@@ -72,7 +72,7 @@ angular.module('womai517App')
           $window.alert(json);
         });
       });
-      $scope.settings.openAlertPanel('此时应弹出分享遮罩');
+      $scope.settings.isShare = true;
     };
 
     $scope.download = function () {

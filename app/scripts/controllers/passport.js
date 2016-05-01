@@ -15,6 +15,7 @@ angular.module('womai517App')
       'Karma'
     ];
     $scope.settings.bodyClass = '';
+    $scope.settings.isShare = false;
 
     $scope.getPassport = function () {
       $log.debug('invoke getPassport interface');
@@ -37,7 +38,8 @@ angular.module('womai517App')
               $scope.user.shareState = user.shareState;
               wxshare.invokeWXShare($scope.user);
             } else {
-              $window.alert(data.errMsg);
+              //$window.alert(data.errMsg);
+              $scope.settings.openAlertPanel(data.errMsg);
               $location.path('/');
             }
           } else {
@@ -107,4 +109,12 @@ angular.module('womai517App')
     //  $log.debug('Download button click');
     //  $window.alert('Download button click');
     //};
+
+    $scope.openShare = function () {
+      $scope.settings.isShare = true;
+    };
+
+    $scope.closeShare = function () {
+      $scope.settings.isShare = false;
+    };
   });
