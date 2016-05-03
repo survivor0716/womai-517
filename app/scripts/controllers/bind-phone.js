@@ -71,8 +71,8 @@ angular.module('womai517App')
     $scope.submitBind = function () {
       $log.debug('invoke submitBind interface');
       var params = {
-        phone: $scope.inputRegPhone,
-        code: $scope.inputRegCode,
+        phone: $scope.inputBindPhone,
+        code: $scope.inputBindCode,
         token: $scope.user.token
       };
       $http.post('http://517passport.womai.test.paymew.com/bindPhone', params)
@@ -81,15 +81,17 @@ angular.module('womai517App')
             var data = response.data;
             $log.debug('fastReg: ', data);
             if (!data.errCode) {
-              $window.alert(data.errMsg);
-              $scope.user.username = $scope.inputRegPhone;
+              //$window.alert(data.errMsg);
+              $scope.user.username = $scope.inputBindPhone;
               $location.path('/passport');
+            } else {
+              $scope.settings.openAlertPanel(data.errCode);
             }
           } else {
-
+            $window.alert('网络异常，请重新尝试');
           }
         }, function (response) {
-
+          $window.alert('网络异常，请重新尝试');
         });
     };
   });

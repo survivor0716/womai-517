@@ -18,42 +18,37 @@ angular.module('womai517App')
     $scope.settings.isShare = false;
 
     $scope.getPassport = function () {
-      if($window.localStorage.user != undefined) {
-        $scope.user = JSON.parse($window.localStorage.user);
-        wxshare.invokeWXShare($scope.user);
-      } else {
-        $log.debug('invoke getPassport interface');
-        var params = {
-          token: $scope.user.token
-        };
-        $log.debug(params);
-        $http.post('http://517passport.womai.test.paymew.com/getPassport', params)
-          .then(function (response) {
-            if (typeof response.data == 'object') {
-              var data = response.data;
-              $log.debug('getPassport: ', data);
-              if (!data.errCode) {
-                var user = data.data;
-                $scope.user.mobileV = user.mobileV;
-                $scope.user.isNewV = user.isNewV;
-                $scope.user.regTime = user.regTime;
-                $scope.user.regState = user.regState;
-                $scope.user.cosState = user.cosState;
-                $scope.user.shareState = user.shareState;
-                $window.localStorage.user = JSON.stringify($scope.user);
-                wxshare.invokeWXShare($scope.user);
-              } else {
-                //$window.alert(data.errMsg);
-                $scope.settings.openAlertPanel(data.errMsg);
-                $location.path('/');
-              }
+      $log.debug('invoke getPassport interface');
+      var params = {
+        token: $scope.user.token
+      };
+      $log.debug(params);
+      $http.post('http://517passport.womai.test.paymew.com/getPassport', params)
+        .then(function (response) {
+          if (typeof response.data == 'object') {
+            var data = response.data;
+            $log.debug('getPassport: ', data);
+            if (!data.errCode) {
+              var user = data.data;
+              $scope.user.mobileV = user.mobileV;
+              $scope.user.isNewV = user.isNewV;
+              $scope.user.regTime = user.regTime;
+              $scope.user.regState = user.regState;
+              $scope.user.cosState = user.cosState;
+              $scope.user.shareState = user.shareState;
+              //$window.localStorage.user = JSON.stringify($scope.user);
+              wxshare.invokeWXShare($scope.user);
             } else {
-              $window.alert('网络异常');
+              //$window.alert(data.errMsg);
+              $scope.settings.openAlertPanel(data.errMsg);
+              $location.path('/');
             }
-          }, function (response) {
+          } else {
             $window.alert('网络异常');
-          });
-      }
+          }
+        }, function (response) {
+          $window.alert('网络异常');
+        });
     };
     $scope.getPassport();
 
