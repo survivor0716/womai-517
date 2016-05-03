@@ -61,12 +61,12 @@ angular.module('womai517App')
         var params = '?old=' + encodeURIComponent($scope.user.current) + 'p=' + $scope.user.promotionId;
         var shareData = {
           data: {
-            title         : "红包护照吃天下",
+            title         : "517元免费吃？黄渤在吃货界又搞了个大新闻！",
             commonImageUrl: "http://womai2016.cdn.paymew.com/Icon/icon_womai_517Passport.png",
-            webUrl        : "http://m.womai.com/517Coupon/web" + params,
-            commonText    : "517元免费吃？黄渤在吃货届又搞了个大新闻！",
-            weiboContent  : "517元免费吃？黄渤在吃货届又搞了个大新闻！",
-            copyContent   : "517元免费吃？黄渤在吃货届又搞了个大新闻！"
+            webUrl        : "http://m.womai.com/517Passport/web" + params,
+            commonText    : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～",
+            weiboContent  : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～",
+            copyContent   : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～"
           }
         };
         bridge.callHandler('shareToApp', shareData, function (json) {
