@@ -8,7 +8,7 @@
  * Controller of the womai517App
  */
 angular.module('womai517App')
-  .controller('BindPhoneCtrl', function ($scope, $log, $window, $http, $location) {
+  .controller('BindPhoneCtrl', function ($scope, $log, $window, $http, $location, $interval) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

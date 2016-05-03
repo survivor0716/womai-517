@@ -20,9 +20,9 @@ angular.module('womai517App')
     $scope.getPassport = function () {
       $log.debug('invoke getPassport interface');
       var params = {
-        token: $scope.user.token
+        token: $window.localStorage.token || ''
       };
-      $log.debug(params);
+      $log.debug('request params: ', params);
       $http.post('http://517passport.womai.test.paymew.com/getPassport', params)
         .then(function (response) {
           if (typeof response.data == 'object') {
@@ -30,12 +30,17 @@ angular.module('womai517App')
             $log.debug('getPassport: ', data);
             if (!data.errCode) {
               var user = data.data;
+              $scope.user.username = user.phone;
+              $scope.user.current = user.old;
+              $scope.user.token = user.token;
+              $scope.user.sso = user.sso;
               $scope.user.mobileV = user.mobileV;
               $scope.user.isNewV = user.isNewV;
               $scope.user.regTime = user.regTime;
               $scope.user.regState = user.regState;
               $scope.user.cosState = user.cosState;
               $scope.user.shareState = user.shareState;
+              $log.debug('User info: ', $scope.user);
               //$window.localStorage.user = JSON.stringify($scope.user);
               wxshare.invokeWXShare($scope.user);
             } else {

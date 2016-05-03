@@ -31,11 +31,12 @@ angular.module('womai517App')
       }
     };
 
-    $log.debug($location.search().p);
+    $log.debug('param p: ', $location.search().p);
+    $log.debug('param old: ', $location.search().old);
 
-    //TODO：调试用秘密参数
-    $log.debug($location.search().secretcode);
-    wxshare.saveSecretCode($location.search().secretcode);
+    //调试用秘密参数
+    //$log.debug($location.search().secretcode);
+    //wxshare.saveSecretCode($location.search().secretcode);
 
     $scope.user = {
       username   : '',
@@ -51,7 +52,7 @@ angular.module('womai517App')
       current    : '',
       promotionId: $location.search().p || 212928
     };
-    $log.debug($scope.user);
+    $log.debug('user: ', $scope.user);
 
     $scope.settings.bodyClass = '';
 
