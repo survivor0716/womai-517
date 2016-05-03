@@ -580,38 +580,46 @@ input {
   font-weight: normal;
 }
 .rule .container .row p label {
-  width: 17%;
+  width: 22%;
 }
 .rule .container .row p span {
-  width: 83%;
+  width: 78%;
 }
 .rule .container.section1 .row {
-  height: 1.5rem;
+  padding: .1rem 0;
 }
-.rule .container.section1 .row p span {
-  width: 80%;
-  text-align: left;
+.rule .container.section1 .row p {
+  margin-top: .1rem;
+}
+.rule .container.section1 .row label {
+  width: 22%;
+}
+.rule .container.section1 .row span {
+  width: 78%;
 }
 .rule .container.section2 .row {
   padding: .1rem 0;
 }
+.rule .container.section2 .row p {
+  margin-top: .1rem;
+}
 .rule .container.section2 .row label {
-  width: 20%;
+  width: 22%;
 }
 .rule .container.section2 .row span {
-  width: 80%;
+  width: 78%;
 }
 .rule .container.section3 .row {
-  padding-bottom: .1rem;
+  padding: .1rem 0;
 }
 .rule .container.section3 .row p {
   margin-top: .1rem;
 }
 .rule .container.section3 .row label {
-  width: 25%;
+  width: 22%;
 }
 .rule .container.section3 .row span {
-  width: 75%;
+  width: 78%;
 }
 .rule .container.section4 .row {
   height: 2.4rem;
