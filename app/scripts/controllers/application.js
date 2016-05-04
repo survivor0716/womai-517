@@ -16,7 +16,7 @@ angular.module('womai517App')
     ];
     $scope.settings = {};
     $scope.settings.activityUnlock = true;
-    $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '注册解锁红包' : '5月3日开启';
+    $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '解锁红包' : '5月3日开启';
     $scope.settings.unlockActivity = function () {
       if (wxshare.isAccessable()) {
         $location.path('/login');
@@ -57,8 +57,14 @@ angular.module('womai517App')
     $scope.settings.bodyClass = '';
 
     $scope.share = function () {
+      var ua = $window.navigator.userAgent.toLowerCase();
+      $log.debug(ua);
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $scope.settings.isShare = true;
+        return;
+      }
       $bridge(function (bridge) {
-        var params = '?old=' + encodeURIComponent($scope.user.current) + 'p=' + $scope.user.promotionId;
+        var params = '?old=' + encodeURIComponent($scope.user.current) + '&p=' + $scope.user.promotionId;
         var shareData = {
           data: {
             title         : "517元免费吃？黄渤在吃货界又搞了个大新闻！",
@@ -73,7 +79,6 @@ angular.module('womai517App')
           $window.alert(json);
         });
       });
-      $scope.settings.isShare = true;
     };
 
     $scope.download = function () {
