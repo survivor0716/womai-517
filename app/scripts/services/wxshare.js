@@ -76,6 +76,18 @@ angular.module('womai517App')
             success: function () {
               // 用户确认分享后执行的回调函数
               // alert("share success");
+              if(data.token == '') {
+                return;
+              }
+                var params = {
+                  token: data.token
+                };
+                $http.post('http://m.womai.com/517Passport/shareCoupon', params)
+                  .then(function (response) {
+
+                  }, function (response) {
+
+                  });
             },
             cancel : function () {
               // 用户取消分享后执行的回调函数
@@ -93,6 +105,18 @@ angular.module('womai517App')
             success: function () {
               // 用户确认分享后执行的回调函数
               // alert("share success");
+              if(data.token == '') {
+                return;
+              }
+              var params = {
+                token: data.token
+              };
+              $http.post('http://m.womai.com/517Passport/shareCoupon', params)
+                .then(function (response) {
+
+                }, function (response) {
+
+                });
             },
             cancel : function () {
               // 用户取消分享后执行的回调函数

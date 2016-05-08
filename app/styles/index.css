@@ -225,8 +225,6 @@ input {
 .gift .container.section1 .box .col-xs-4 img {
   width: 1.6rem;
   height: 1.6rem;
-  border-radius: 1.6rem;
-  border: .03rem solid #000000;
 }
 .gift .container.section1 .box .col-xs-8 {
   padding: .1rem .16rem;
@@ -324,7 +322,7 @@ input {
   position: absolute;
   left: auto;
   bottom: .07rem;
-  width: 1.06rem;
+  min-width: 1.06rem;
   height: .3rem;
   line-height: .15rem;
   background-color: #ffe301;

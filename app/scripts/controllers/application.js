@@ -8,7 +8,7 @@
  * Controller of the womai517App
  */
 angular.module('womai517App')
-  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, $location, $route, wxshare) {
+  .controller('ApplicationCtrl', function ($log, $window, $scope, $http, $location, $route, $timeout, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -56,14 +56,15 @@ angular.module('womai517App')
 
     $scope.settings.bodyClass = '';
 
-    $scope.share = function () {
-      var ua = $window.navigator.userAgent.toLowerCase();
-      $log.debug(ua);
-      if (ua.match(/MicroMessenger/i) == "micromessenger") {
-        $scope.settings.isShare = true;
-        return;
-      }
-      $bridge(function (bridge) {
+    $bridge(function (bridge) {
+      $scope.share = function () {
+        var ua = $window.navigator.userAgent.toLowerCase();
+        $log.debug(ua);
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+          $scope.settings.isShare = true;
+          return;
+        }
+
         var params = '?old=' + encodeURIComponent($scope.user.current) + '&p=' + $scope.user.promotionId;
         var shareData = {
           data: {
@@ -76,10 +77,27 @@ angular.module('womai517App')
           }
         };
         bridge.callHandler('shareToApp', shareData, function (json) {
-          $window.alert(json);
+          //$window.alert(json);
+          if ($scope.user.token == '') {
+            return;
+          }
+          var params = {
+            token: $scope.user.token
+          };
+          $http.post('http://m.womai.com/517Passport/shareCoupon', params);
         });
-      });
-    };
+
+        $timeout(function () {
+          if ($scope.user.token == '') {
+            return;
+          }
+          var params = {
+            token: $scope.user.token
+          };
+          $http.post('http://m.womai.com/517Passport/shareCoupon', params);
+        }, 1000)
+      };
+    });
 
     $scope.download = function () {
       var QId;
