@@ -16,7 +16,7 @@ angular.module('womai517App')
     ];
     $scope.settings = {};
     $scope.settings.activityUnlock = true;
-    $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '解锁红包' : '5月3日开启';
+    $scope.settings.homeBtnText = $scope.settings.activityUnlock ? '解锁福利' : '5月3日开启';
     $scope.settings.unlockActivity = function () {
       if (wxshare.isAccessable()) {
         $location.path('/login');
@@ -56,6 +56,13 @@ angular.module('womai517App')
 
     $scope.settings.bodyClass = '';
 
+    $scope.share = function () {
+      var ua = $window.navigator.userAgent.toLowerCase();
+      $log.debug(ua);
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $scope.settings.isShare = true;
+      }
+    };
     $bridge(function (bridge) {
       $scope.share = function () {
         var ua = $window.navigator.userAgent.toLowerCase();
@@ -95,7 +102,7 @@ angular.module('womai517App')
             token: $scope.user.token
           };
           $http.post('http://m.womai.com/517Passport/shareCoupon', params);
-        }, 1000)
+        }, 1000);
       };
     });
 
@@ -157,4 +164,23 @@ angular.module('womai517App')
           $window.alert(res.errMsg);
         }
       });
+
+    $scope.isInApp = function () {
+      return $location.search().ua == 'womaiapp';
+    };
+
+    $scope.goToWomai = function () {
+      if (!$scope.isInApp()) {
+        $window.location.href = 'http://m.womai.com?ssotoken=' + $scope.user.sso + '&sourceId=' + $scope.user.promotionId;
+      }
+    };
+
+    $bridge(function (bridge) {
+      $scope.goToWomai = function () {
+        var data = {};
+        bridge.callHandler('goHomeToApp', data, function (json) {
+          $window.alert(json);
+        });
+      };
+    });
   });

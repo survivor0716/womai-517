@@ -20,7 +20,7 @@ angular.module('womai517App')
     $scope.getPassport = function () {
       $log.debug('invoke getPassport interface');
       var params = {
-        token: $window.localStorage.token || ''
+        token: $window.localStorage.passport517token || ''
       };
       $log.debug('request params: ', params);
       $http.post('http://517passport.womai.test.paymew.com/getPassport', params)
@@ -40,8 +40,8 @@ angular.module('womai517App')
               $scope.user.regState = user.regState;
               $scope.user.cosState = user.cosState;
               $scope.user.shareState = user.shareState;
+              $window.localStorage.passport517token = $scope.user.token;
               $log.debug('User info: ', $scope.user);
-              //$window.localStorage.user = JSON.stringify($scope.user);
               wxshare.invokeWXShare($scope.user);
             } else {
               //$window.alert(data.errMsg);
@@ -66,37 +66,37 @@ angular.module('womai517App')
       switch (id) {
         case 0: //美食券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/index.shtml' + params;
+            $window.location.href = 'http://m.womai.com/0c77266525167.shtml' + params;
           }
           break;
         case 1: //美食券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/index.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params;
           }
           break;
         case 2: //生鲜券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/0c64306.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params;
           }
           break;
         case 3: //进口券
           if ($scope.user.cosState) {
-            $window.location.href = 'http://m.womai.com/0c66102.shtml' + params;
+            $window.location.href = 'http://m.womai.com/0c7662256525160.shtml' + params;
           }
           break;
         case 4: //红酒券
           if ($scope.user.cosState) {
-            $window.location.href = 'http://m.womai.com/0c6800.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c769236525163.shtml' + params;
           }
           break;
         case 5: //美食券
           if ($scope.user.shareState) {
-            $window.location.href = 'http://m.womai.com/index.shtml' + params;
+            $window.location.href = 'http://m.womai.com/200c77266525721.shtml' + params;
           }
           break;
         case 6: //生鲜券
           if ($scope.user.shareState) {
-            $window.location.href = 'http://m.womai.com/0c64306.shtml' + params;
+            $window.location.href = 'http://m.womai.com/200c7644296525486.shtml' + params;
           }
           break;
         case 7: //黄金纯酿
@@ -105,19 +105,6 @@ angular.module('womai517App')
           }
           break;
       }
-    };
-    //$scope.share = function () {
-    //  $log.debug('Share button click');
-    //  $window.alert('Share button click');
-    //};
-    //
-    //$scope.download = function () {
-    //  $log.debug('Download button click');
-    //  $window.alert('Download button click');
-    //};
-
-    $scope.goToWomai = function () {
-      $window.location.href = 'http://m.womai.com?ssotoken=' + $scope.user.sso + '&sourceId=' + $scope.user.promotionId;
     };
 
     $scope.openShare = function () {

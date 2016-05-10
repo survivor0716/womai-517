@@ -116,23 +116,91 @@
           letter-spacing: -1px;
         }
       }
+      .coupon {
+        position: relative;
+        .lock-mask {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, .5);
+          .lock-icon {
+            width: .5rem;
+            height: .5rem;
+            margin: 0 auto;
+            margin-top: .1rem;
+            background: url('../images/icon_lock.png') no-repeat 50%;
+            background-size: 100%;
+          }
+          .btn {
+//            width: 1.84rem;
+//            height: .44rem;
+            background-color: @color-btn-lg;
+            border: .04rem solid #000000;
+            border-radius: .4rem;
+            margin-top: .05rem;
+            margin-bottom: .05rem;
+//            padding: .06rem .12rem;
+            color: #000;
+            font-size: .24rem;
+            font-weight: bold;
+            .consume-icon {
+              display: inline-block;
+              width: .24rem;
+              height: .24rem;
+              vertical-align: text-top;
+              background: url('../images/icon_shop.png') no-repeat 50%;
+              background-size: 100%;
+            }
+            .share-icon {
+              display: inline-block;
+              width: .24rem;
+              height: .24rem;
+              vertical-align: text-top;
+              background: url('../images/icon_share.png') no-repeat 50%;
+              background-size: 100%;
+            }
+            .redbold {
+              color: red;
+              font-size: inherit;
+              font-weight: bold;
+            }
+          }
+          p {
+            font-size: .12rem;
+            color: #ddd;
+          }
+        }
+        .share-mask {
+          padding-top: .6rem;
+        }
+      }
       .col-xs-6 {
         position: relative;
         height: 1.4rem;
         padding: 0;
         margin-bottom: .15rem;
         .btn-sm {
-          position: absolute;
-          left: auto;
-          bottom: .07rem;
+//          position: absolute;
+//          left: auto;
+//          bottom: .07rem;
           min-width: 1.06rem;
           height: .3rem;
-          line-height: .15rem;
+          line-height: .3rem;
+
           background-color: #ffe301;
           border: .02rem solid #000000;
           border-radius: .04rem;
-          margin-left: -.503rem;
-          font-size: .14rem;
+          //          margin-left: -.503rem;
+          margin-top: 1rem;
+          padding: 0;
+          font-size: .12rem;
+        }
+        .icon-usenow {
+          width: 1.25rem;
+          padding-left: .25rem;
+          background: url(../images/icon_m.png) no-repeat .1rem 50% #ffe301;
+          background-size: .25rem;
         }
       }
     }
@@ -148,11 +216,11 @@
           margin-left: -.491rem;
         }
       }
-      .col-xs-6.left.coupon0 {
+      .col-xs-6.coupon0 {
         background: url("../images/coupon_0.png") no-repeat bottom;
         background-size: 3.04rem;
       }
-      .col-xs-6.left.coupon1 {
+      .col-xs-6.coupon1 {
         background: url("../images/coupon_1.png") no-repeat bottom;
         background-size: 3.04rem;
       }
@@ -162,7 +230,7 @@
           margin-left: -.62rem;
         }
       }
-      .col-xs-6.right.coupon2 {
+      .col-xs-6.coupon2 {
         background: url("../images/coupon_2.png") no-repeat bottom;
         background-size: 3.04rem;
       }
@@ -179,7 +247,7 @@
           margin-left: -.491rem;
         }
       }
-      .col-xs-6.left.coupon3 {
+      .col-xs-6.coupon3 {
         background: url("../images/coupon_3.png") no-repeat bottom;
         background-size: 3.04rem;
       }
@@ -189,7 +257,7 @@
           margin-left: -.62rem;
         }
       }
-      .col-xs-6.right.coupon4 {
+      .col-xs-6.coupon4 {
         background: url("../images/coupon_4.png") no-repeat bottom;
         background-size: 3.04rem;
       }
@@ -206,11 +274,11 @@
           margin-left: -.491rem;
         }
       }
-      .col-xs-6.left.coupon5 {
+      .col-xs-6.coupon5 {
         background: url("../images/coupon_5.png") no-repeat bottom;
         background-size: 3.04rem;
       }
-      .col-xs-6.left.coupon7 {
+      .col-xs-6.coupon7 {
         background: url("../images/coupon_7.png") no-repeat bottom;
         background-size: 3.04rem;
       }
@@ -220,7 +288,7 @@
           margin-left: -.62rem;
         }
       }
-      .col-xs-6.right.coupon6 {
+      .col-xs-6.coupon6 {
         background: url("../images/coupon_6.png") no-repeat bottom;
         background-size: 3.04rem;
       }

@@ -113,7 +113,7 @@ input {
 }
 .login .row .input {
   width: 3.88rem;
-  margin: .2rem auto;
+  margin: 0 auto;
 }
 .login .row .input .form-control {
   height: 0.66rem;
@@ -122,7 +122,8 @@ input {
   color: #81eaff;
   font-size: .2rem;
   text-align: center;
-  border: 2px solid #000;
+  border: 1px solid #000;
+  border-radius: 0;
 }
 .login .row .input #code {
   float: left;
@@ -135,19 +136,15 @@ input {
   padding: 0;
 }
 .login .row .input .btn-lg {
-  height: .96rem;
+  height: .8rem;
   border: .04rem solid #000000;
   background-color: #ffd304;
-  margin-top: .68rem;
+  margin-top: .1rem;
   margin-bottom: .09rem;
   color: #000000;
-  font-size: .34rem;
+  font-size: .3rem;
   font-weight: bold;
   border-radius: 40rem;
-}
-.login .row .input a {
-  font-size: .22rem;
-  color: #05839c;
 }
 .login .row .input input::-webkit-input-placeholder,
 .login .row .input textarea::-webkit-input-placeholder {
@@ -165,10 +162,33 @@ input {
 .login .row .input textarea:-ms-input-placeholder {
   color: #81eaff;
 }
-.login .row .text {
-  color: #ffffff;
-  margin-top: .44rem;
-  margin-bottom: .5rem;
+.login .row .new-user {
+  width: 4.5rem;
+  margin: 0 auto;
+  padding: .1rem .2rem;
+  background-color: #10ade9;
+}
+.login .row .old-user {
+  margin-top: .1rem;
+}
+.login .row .old-user a {
+  font-size: .22rem;
+  color: #05839c;
+}
+.login .row .old-user .text {
+  color: #eee;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+}
+.login .row .old-user .old-user-login {
+  margin: 0 auto;
+  background: #7dda07;
+  border-radius: 4px;
+  width: 3.8rem;
+  height: .5rem;
+  line-height: .5rem;
+  font-size: .26rem;
+  color: #eee;
 }
 .login.hongbao .row .input.hongbao {
   margin: -0.5rem auto 0.2rem;
@@ -312,6 +332,62 @@ input {
   color: #0596b1;
   letter-spacing: -1px;
 }
+.gift .container.section2 .box .coupon {
+  position: relative;
+}
+.gift .container.section2 .box .coupon .lock-mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.gift .container.section2 .box .coupon .lock-mask .lock-icon {
+  width: .5rem;
+  height: .5rem;
+  margin: 0 auto;
+  margin-top: .1rem;
+  background: url('../images/icon_lock.png') no-repeat 50%;
+  background-size: 100%;
+}
+.gift .container.section2 .box .coupon .lock-mask .btn {
+  background-color: #ffd304;
+  border: .04rem solid #000000;
+  border-radius: .4rem;
+  margin-top: .05rem;
+  margin-bottom: .05rem;
+  color: #000;
+  font-size: .24rem;
+  font-weight: bold;
+}
+.gift .container.section2 .box .coupon .lock-mask .btn .consume-icon {
+  display: inline-block;
+  width: .24rem;
+  height: .24rem;
+  vertical-align: text-top;
+  background: url('../images/icon_shop.png') no-repeat 50%;
+  background-size: 100%;
+}
+.gift .container.section2 .box .coupon .lock-mask .btn .share-icon {
+  display: inline-block;
+  width: .24rem;
+  height: .24rem;
+  vertical-align: text-top;
+  background: url('../images/icon_share.png') no-repeat 50%;
+  background-size: 100%;
+}
+.gift .container.section2 .box .coupon .lock-mask .btn .redbold {
+  color: red;
+  font-size: inherit;
+  font-weight: bold;
+}
+.gift .container.section2 .box .coupon .lock-mask p {
+  font-size: .12rem;
+  color: #ddd;
+}
+.gift .container.section2 .box .coupon .share-mask {
+  padding-top: .6rem;
+}
 .gift .container.section2 .box .col-xs-6 {
   position: relative;
   height: 1.4rem;
@@ -319,17 +395,21 @@ input {
   margin-bottom: .15rem;
 }
 .gift .container.section2 .box .col-xs-6 .btn-sm {
-  position: absolute;
-  left: auto;
-  bottom: .07rem;
   min-width: 1.06rem;
   height: .3rem;
-  line-height: .15rem;
+  line-height: .3rem;
   background-color: #ffe301;
   border: .02rem solid #000000;
   border-radius: .04rem;
-  margin-left: -0.503rem;
-  font-size: .14rem;
+  margin-top: 1rem;
+  padding: 0;
+  font-size: .12rem;
+}
+.gift .container.section2 .box .col-xs-6 .icon-usenow {
+  width: 1.25rem;
+  padding-left: .25rem;
+  background: url(../images/icon_m.png) no-repeat 0.1rem 50% #ffe301;
+  background-size: .25rem;
 }
 .gift .container.section2 .register .col-xs-6 {
   background: url("../images/coupon_red.png") no-repeat bottom;
@@ -341,11 +421,11 @@ input {
 .gift .container.section2 .register .col-xs-6.left .btn-sm {
   margin-left: -0.491rem;
 }
-.gift .container.section2 .register .col-xs-6.left.coupon0 {
+.gift .container.section2 .register .col-xs-6.coupon0 {
   background: url("../images/coupon_0.png") no-repeat bottom;
   background-size: 3.04rem;
 }
-.gift .container.section2 .register .col-xs-6.left.coupon1 {
+.gift .container.section2 .register .col-xs-6.coupon1 {
   background: url("../images/coupon_1.png") no-repeat bottom;
   background-size: 3.04rem;
 }
@@ -355,7 +435,7 @@ input {
 .gift .container.section2 .register .col-xs-6.right .btn-sm {
   margin-left: -0.62rem;
 }
-.gift .container.section2 .register .col-xs-6.right.coupon2 {
+.gift .container.section2 .register .col-xs-6.coupon2 {
   background: url("../images/coupon_2.png") no-repeat bottom;
   background-size: 3.04rem;
 }
@@ -369,7 +449,7 @@ input {
 .gift .container.section2 .consume .col-xs-6.left .btn-sm {
   margin-left: -0.491rem;
 }
-.gift .container.section2 .consume .col-xs-6.left.coupon3 {
+.gift .container.section2 .consume .col-xs-6.coupon3 {
   background: url("../images/coupon_3.png") no-repeat bottom;
   background-size: 3.04rem;
 }
@@ -379,7 +459,7 @@ input {
 .gift .container.section2 .consume .col-xs-6.right .btn-sm {
   margin-left: -0.62rem;
 }
-.gift .container.section2 .consume .col-xs-6.right.coupon4 {
+.gift .container.section2 .consume .col-xs-6.coupon4 {
   background: url("../images/coupon_4.png") no-repeat bottom;
   background-size: 3.04rem;
 }
@@ -393,11 +473,11 @@ input {
 .gift .container.section2 .share .col-xs-6.left button {
   margin-left: -0.491rem;
 }
-.gift .container.section2 .share .col-xs-6.left.coupon5 {
+.gift .container.section2 .share .col-xs-6.coupon5 {
   background: url("../images/coupon_5.png") no-repeat bottom;
   background-size: 3.04rem;
 }
-.gift .container.section2 .share .col-xs-6.left.coupon7 {
+.gift .container.section2 .share .col-xs-6.coupon7 {
   background: url("../images/coupon_7.png") no-repeat bottom;
   background-size: 3.04rem;
 }
@@ -407,7 +487,7 @@ input {
 .gift .container.section2 .share .col-xs-6.right button {
   margin-left: -0.62rem;
 }
-.gift .container.section2 .share .col-xs-6.right.coupon6 {
+.gift .container.section2 .share .col-xs-6.coupon6 {
   background: url("../images/coupon_6.png") no-repeat bottom;
   background-size: 3.04rem;
 }

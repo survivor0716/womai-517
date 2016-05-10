@@ -29,77 +29,103 @@
   <section class="container section2">
     <img id="" class="myhb" src="images/myhongbao.png" alt=""/>
 
-    <div class="box register" ng-if="!user.isNewV">
+    <div class="box register row" ng-if="!user.isNewV">
       <nav><i></i>
 
-        <h2>注册签</h2>
-        <span>（注册红包）</span>
+        <h2>登录签</h2>
+        <span>（登录福利）</span>
       </nav>
-      <div class="row">
-        <div class="col-xs-6 left coupon0" ng-click="goToCoupon(0)">
-          <button class="btn-sm">{{user.regState ? '马上使用' : '未解锁'}}</button>
+      <div class="coupon">
+        <div class="clearfix">
+          <div class="col-xs-6 coupon0" ng-click="goToCoupon(0)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.regState}">{{user.regState ? '马上使用' : '未解锁'}}</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="box register" ng-if="user.isNewV">
+    <div class="box register row" ng-if="user.isNewV">
       <nav><i></i>
 
         <h2>注册签</h2>
-        <span>（注册红包）</span>
+        <span>（注册福利）</span>
       </nav>
-      <div class="row">
-        <div class="col-xs-6 left coupon1" ng-click="goToCoupon(1)">
-          <button class="btn-sm">{{user.regState ? '马上使用' : '未解锁'}}</button>
-        </div>
-        <div class="col-xs-6 right coupon2" ng-click="goToCoupon(2)">
-          <button class="btn-sm">{{user.regState ? '马上使用' : '未解锁'}}</button>
+      <div class="coupon">
+        <div class="clearfix">
+          <div class="col-xs-6 coupon1" ng-click="goToCoupon(1)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.regState}">{{user.regState ? '马上使用' : '未解锁'}}</button>
+          </div>
+          <div class="col-xs-6 coupon2" ng-click="goToCoupon(2)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.regState}">{{user.regState ? '马上使用' : '未解锁'}}</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="box consume" ng-if="user.isNewV">
+    <div class="box consume row" ng-if="user.isNewV">
       <nav><i></i>
 
         <h2>消费签</h2>
-        <span>（消费红包）</span>
+        <span>（消费福利）</span>
       </nav>
-      <div class="row">
-        <div class="col-xs-6 left coupon3" ng-click="goToCoupon(3)">
-          <button class="btn-sm">{{user.cosState ? '马上使用' : '未解锁'}}</button>
+      <div class="coupon">
+        <div class="clearfix">
+          <div class="col-xs-6 coupon3" ng-click="goToCoupon(3)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.cosState}">{{user.cosState ? '马上使用' : '未解锁'}}</button>
+          </div>
+          <div class="col-xs-6 coupon4" ng-click="goToCoupon(4)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.cosState}">{{user.cosState ? '马上使用' : '未解锁'}}</button>
+          </div>
         </div>
-        <div class="col-xs-6 right coupon4" ng-click="goToCoupon(4)">
-          <button class="btn-sm">{{user.cosState ? '马上使用' : '未解锁'}}</button>
+        <div class="lock-mask" ng-hide="user.cosState">
+          <div class="lock-icon"></div>
+          <button type="button" class="btn" ng-click="goToWomai()">
+            <span class="consume-icon"></span>
+            购物解锁
+            <span class="redbold">417</span>
+            元福利
+          </button>
+          <p>福利解锁5天内及5月31日前有效。</p>
         </div>
       </div>
     </div>
-    <div class="box share">
+    <div class="box share row">
       <nav><i></i>
 
-        <h2>分享签</h2>
-        <span>（分享红包）</span>
+        <h2>组团签</h2>
+        <span>（拉新福利）</span>
       </nav>
-      <div class="row">
-        <div class="col-xs-6 left coupon5" ng-click="goToCoupon(5)">
-          <button class="btn-sm">{{user.shareState ? '马上使用' : '未解锁'}}</button>
+      <div class="coupon">
+        <div class="clearfix">
+          <div class="col-xs-6 coupon5" ng-click="goToCoupon(5)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.shareState}">{{user.shareState ? '马上使用' : '未解锁'}}</button>
+          </div>
+          <div class="col-xs-6 coupon6" ng-click="goToCoupon(6)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.shareState}">{{user.shareState ? '马上使用' : '未解锁'}}</button>
+          </div>
         </div>
-        <div class="col-xs-6 right coupon6" ng-click="goToCoupon(6)">
-          <button class="btn-sm">{{user.shareState ? '马上使用' : '未解锁'}}</button>
+        <div class="clearfix">
+          <div class="col-xs-6 coupon7" ng-click="goToCoupon(7)">
+            <button class="btn-sm" ng-class="{'icon-usenow': user.shareState}">{{user.shareState ? '马上使用' : '未解锁'}}</button>
+          </div>
+        </div>
+        <div class="lock-mask share-mask" ng-hide="user.shareState">
+          <div class="lock-icon"></div>
+          <button type="button" class="btn" ng-click="share()">
+            <span class="share-icon"></span>
+            拉新解锁
+            <span class="redbold">417</span>
+            元福利
+          </button>
+          <p>福利解锁5天内及5月31日前有效。</p>
         </div>
       </div>
-      <div class="row ">
-        <div class="col-xs-6 left coupon7" ng-click="goToCoupon(7)">
-          <button class="btn-sm">{{user.shareState ? '马上使用' : '未解锁'}}</button>
-        </div>
-        <!-- <div class="col-xs-6 right">
-             <button>已解锁</button>
-         </div>-->
-      </div>
+
     </div>
     <div class="box btn_group">
       <div class="row">
-        <div class="col-xs-6">
-          <button class="btn" type="button" ng-click="share()">分享解锁417元红包</button>
+        <div class="col-xs-6 col-xs-offset-6" ng-if="isInApp()">
+        <button class="btn" type="button" ng-click="goToWomai()">点这里直接购哦</button>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6 col-xs-offset-6" ng-if="!isInApp()">
           <button class="btn" type="button" ng-click="download()">下载APP 嗨购啦</button>
           <p><a href="" ng-click="goToWomai()">点这里可直接购哦~</a></p>
         </div>
@@ -114,15 +140,15 @@
 
       <p>
         <label>注册签：</label>
-        <span>注册且手机验证可获得40元注册红包</span>
+        <span>注册且手机验证可获得40元注册福利</span>
       </p>
       <p>
         <label>消费签：</label>
-        <span>注册、验证且下单成功签收得60元消费红包</span>
+        <span>注册、验证且下单成功签收得60元消费福利</span>
       </p>
       <p>
-        <label>分享签：</label>
-        <span>分享本活动。带来新用户且新用户成功下单即可获得417元分享红包</span>
+        <label>组团签：</label>
+        <span>通知小伙伴即可获得417元福利（满199减50元生鲜券，满199减50元常温券,价值317元18年苏格兰威士忌酒劵各1张）</span>
       </p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>
@@ -130,12 +156,12 @@
       <h2>护照规则</h2>
 
       <p>
-        <label>注册签：</label>
-        <span>参与活动可获得10元注册红包</span>
+        <label>登录签：</label>
+        <span>参与活动可获得10元注册福利</span>
       </p>
       <p>
-        <label>分享签：</label>
-        <span>分享本活动。带来新用户且新客成功下单即可获得417元分享红包</span>
+        <label>组团签：</label>
+        <span>通知小伙伴、邀请新人注册后可获得417元福利（满199减50元生鲜券，满199减50元常温券,价值317元18年苏格兰威士忌酒劵各1张）</span>
       </p>
       <div class="text-right"><a href="#/rule">查看活动规则》</a></div>
     </div>

@@ -4,17 +4,25 @@
     <!--<img id="bg_border" class="" src="images/fg_cloud.png" alt="" width="100%"/>-->
   </div>
   <div class="row">
-    <form>
-      <div class="input from-group">
-        <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照" maxlength="11" ng-model="inputRegPhone">
-        <input id="code" class="form-control" type="tel" placeholder="请输入验证码" ng-model="inputRegCode">
-        <button id="btn" type="button" class="btn form-control" ng-click="getRegCode()" ng-disabled="settings.disableRegCodeBtn">{{settings.regCodeBtnText}}</button>
-        <button id="register" type="button" class="btn btn-lg form-control" ng-click="submitReg()">注册激活红包</button>
-        <a class="text-center" href="#/user-login">我买网已注册会员点击登录</a>
+    <div class="new-user">
+      <form>
+        <div class="input">
+          <input id="phone" class="form-control" type="tel" placeholder="请输入手机号申请护照" maxlength="11" ng-model="inputRegPhone">
+          <input id="code" class="form-control" type="tel" placeholder="请输入验证码" ng-model="inputRegCode">
+          <button id="btn" type="button" class="btn form-control" ng-click="getRegCode()" ng-disabled="settings.disableRegCodeBtn">{{settings.regCodeBtnText}}</button>
+          <button id="register" type="button" class="btn btn-lg form-control" ng-click="submitReg()">新用户注册激活福利</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="old-user">
+      <a class="text-center" href="#/user-login">
+        <p class="old-user-login">我买网会员登录领福利>></p>
+      </a>
 
-      </div>
-    </form>
-    <p class="text" ng-click="download()">下载APP享受购物每一天</p>
+      <p class="text" ng-click="download()">下载APP享受购物每一天</p>
+    </div>
   </div>
   <div id="mask" class="mask" ng-show="settings.isShowAlertPanel" alert-window=""></div>
 </div>

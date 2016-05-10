@@ -36,7 +36,7 @@ angular.module('womai517App')
               $scope.user.current = user.old;
               $scope.user.token = user.token;
               $scope.user.sso = user.sso;
-              $window.localStorage.token = $scope.user.token;
+              $window.localStorage.passport517token = $scope.user.token;
               $location.path('/passport');
             } else {
               //$window.alert(data.errMsg);
