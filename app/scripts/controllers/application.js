@@ -31,6 +31,8 @@ angular.module('womai517App')
       }
     };
 
+    $scope.settings.isInApp = $location.search().ua == 'womaiapp';
+
     $log.debug('param p: ', $location.search().p);
     $log.debug('param old: ', $location.search().old);
 
@@ -63,6 +65,9 @@ angular.module('womai517App')
         $scope.settings.isShare = true;
       }
     };
+    $scope.getToken = function () {
+
+    };
     $bridge(function (bridge) {
       $scope.share = function () {
         var ua = $window.navigator.userAgent.toLowerCase();
@@ -72,12 +77,12 @@ angular.module('womai517App')
           return;
         }
 
-        var params = '?old=' + encodeURIComponent($scope.user.current) + '&p=' + $scope.user.promotionId;
+        var params = '?old=' + encodeURIComponent($scope.user.current) + '&p=' + $scope.user.promotionId + '&rrp=323';
         var shareData = {
           data: {
             title         : "517元免费吃？黄渤在吃货界又搞了个大新闻！",
             commonImageUrl: "http://womai2016.cdn.paymew.com/Icon/icon_womai_517Passport.png",
-            webUrl        : "http://m.womai.com/517Passport/web" + params,
+            webUrl        : "http://20160501-promo-womai.vliang.com/dev/html/index.html" + params,
             commonText    : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～",
             weiboContent  : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～",
             copyContent   : "这才是吃货界最新炫富方式！517元霸王餐，有种说不出的欣喜～"
@@ -103,6 +108,40 @@ angular.module('womai517App')
           };
           $http.post('http://m.womai.com/517Passport/shareCoupon', params);
         }, 1000);
+      };
+
+      $scope.getToken = function () {
+        var userData = {"data": {"userSession": "", "userId": "", "level": "", "test1": ""}};
+
+        bridge.callHandler('userLoginInfoToApp', userData, function (json) {
+          var userId = json.data.userId;
+          var userSession = json.data.userSession;
+          var params = {
+            userId: userId,
+            userSession: userSession,
+            promotionId: $scope.user.promotionId
+          };
+          //$window.alert(JSON.stringify(params));
+          $http.post('http://517passport.womai.test.paymew.com/appLogin', params)
+            .then(function (response) {
+              if (typeof response.data == 'object') {
+                var data = response.data;
+                if (!data.errCode) {
+                  var user = data.data;
+                  //$scope.user.username = $scope.inputRegPhone;
+                  $scope.user.current = user.old;
+                  $scope.user.token = user.token;
+                  $scope.user.sso = user.sso;
+                  $window.localStorage.passport517token = $scope.user.token;
+                  $location.path('/passport');
+                } else {
+                  //$window.alert(JSON.stringify(data));
+                }
+              }
+            }, function (response) {
+              //$window.alert('网络异常' + JSON.stringify(response));
+            });
+        });
       };
     });
 
@@ -166,7 +205,7 @@ angular.module('womai517App')
       });
 
     $scope.isInApp = function () {
-      return $location.search().ua == 'womaiapp';
+      return $scope.settings.isInApp;
     };
 
     $scope.goToWomai = function () {

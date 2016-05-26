@@ -14,6 +14,7 @@ angular.module('womai517App')
       'AngularJS',
       'Karma'
     ];
+
     $scope.settings.bodyClass = '';
     $scope.settings.regCodeBtnText = '获取验证码';
     $scope.settings.disableRegCodeBtn = false;
@@ -67,9 +68,9 @@ angular.module('womai517App')
     $scope.submitReg = function () {
       $log.debug('invoke submitReg interface');
       var params = {
-        phone: $scope.inputRegPhone,
-        code: $scope.inputRegCode,
-        old: $scope.user.old,
+        phone      : $scope.inputRegPhone,
+        code       : $scope.inputRegCode,
+        old        : $scope.user.old,
         promotionId: $scope.user.promotionId
       };
       $http.post('http://517passport.womai.test.paymew.com/fastReg', params)
@@ -85,7 +86,7 @@ angular.module('womai517App')
               $scope.user.sso = user.sso;
               $window.localStorage.passport517token = $scope.user.token;
               $location.path('/passport');
-            } else{
+            } else {
               $scope.settings.openAlertPanel(data.errMsg);
             }
           } else {

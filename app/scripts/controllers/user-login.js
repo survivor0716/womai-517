@@ -14,6 +14,9 @@ angular.module('womai517App')
       'AngularJS',
       'Karma'
     ];
+    //if($scope.isInApp()) {
+      $scope.getToken();
+    //}
 
     $scope.settings.bodyClass = 'bind_phone';
 
