@@ -42,7 +42,7 @@ angular.module('womai517App')
               $scope.user.shareState = user.shareState;
               $window.localStorage.passport517token = $scope.user.token;
               $log.debug('User info: ', $scope.user);
-              if($scope.user.isNewV) {  //新客
+              if ($scope.user.isNewV) {  //新客
                 if ($scope.user.regState) {
                   $scope.settings.openAlertPanel('恭喜您获得了40元的吃货福利（1张满39减20元生鲜券、1张满39减20常温券）');
                 } else {
@@ -79,42 +79,58 @@ angular.module('womai517App')
       switch (id) {
         case 0: //美食券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/0c77266525167.shtml' + params;
+            $window.location.href = 'http://m.womai.com/0c77266525167.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/0c77266525167.shtml' + params + '&couponlock=1';
           }
           break;
         case 1: //美食券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params + '&couponlock=1';
           }
           break;
         case 2: //生鲜券
           if ($scope.user.regState) {
-            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/100c7644296525145.shtml' + params + '&couponlock=1';
           }
           break;
         case 3: //进口券
           if ($scope.user.cosState) {
-            $window.location.href = 'http://m.womai.com/0c7662256525160.shtml' + params;
+            $window.location.href = 'http://m.womai.com/0c7662256525160.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/0c7662256525160.shtml' + params + '&couponlock=1';
           }
           break;
         case 4: //红酒券
           if ($scope.user.cosState) {
-            $window.location.href = 'http://m.womai.com/100c769236525163.shtml' + params;
+            $window.location.href = 'http://m.womai.com/100c769236525163.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/100c769236525163.shtml' + params + '&couponlock=1';
           }
           break;
         case 5: //美食券
           if ($scope.user.shareState) {
-            $window.location.href = 'http://m.womai.com/200c77266525721.shtml' + params;
+            $window.location.href = 'http://m.womai.com/200c77266525721.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/200c77266525721.shtml' + params + '&couponlock=1';
           }
           break;
         case 6: //生鲜券
           if ($scope.user.shareState) {
-            $window.location.href = 'http://m.womai.com/200c7644296525486.shtml' + params;
+            $window.location.href = 'http://m.womai.com/200c7644296525486.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/200c7644296525486.shtml' + params + '&couponlock=1';
           }
           break;
         case 7: //黄金纯酿
           if ($scope.user.shareState) {
-            $window.location.href = 'http://m.womai.com/0p10353885.shtml' + params;
+            $window.location.href = 'http://m.womai.com/0p10353885.shtml' + params + '&couponlock=0';
+          } else {
+            $window.location.href = 'http://m.womai.com/0p10353885.shtml' + params + '&couponlock=1';
           }
           break;
       }
