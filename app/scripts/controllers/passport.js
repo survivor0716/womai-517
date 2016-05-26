@@ -42,19 +42,19 @@ angular.module('womai517App')
               $scope.user.shareState = user.shareState;
               $window.localStorage.passport517token = $scope.user.token;
               $log.debug('User info: ', $scope.user);
-              if ($scope.user.isNewV) {  //新客
-                if ($scope.user.regState) {
-                  $scope.settings.openAlertPanel('恭喜您获得了40元的吃货福利（1张满39减20元生鲜券、1张满39减20常温券）');
-                } else {
-                  $scope.settings.openAlertPanel('未解锁红包：恭喜您领取了40元的吃货福利，我们正在马不停蹄地为您发放卡券，预计5-10分钟送达到您账户中');
-                }
-              } else {  //老客
-                if ($scope.user.regState) {
-                  $scope.settings.openAlertPanel('已解锁红包：恭喜您获得了10元的吃货福利（1张满39减10元全品类券1张）');
-                } else {
-                  $scope.settings.openAlertPanel('未解锁红包：恭喜您领取了10元的吃货福利，我们正在马不停蹄地为您发放卡券，预计5-10分钟送达到您账户中');
-                }
-              }
+              //if ($scope.user.isNewV) {  //新客
+              //  if ($scope.user.regState) {
+              //    $scope.settings.openAlertPanel('恭喜您获得了40元的吃货福利（1张满39减20元生鲜券、1张满39减20常温券）');
+              //  } else {
+              //    $scope.settings.openAlertPanel('未解锁红包：恭喜您领取了40元的吃货福利，我们正在马不停蹄地为您发放卡券，预计5-10分钟送达到您账户中');
+              //  }
+              //} else {  //老客
+              //  if ($scope.user.regState) {
+              //    $scope.settings.openAlertPanel('已解锁红包：恭喜您获得了10元的吃货福利（1张满39减10元全品类券1张）');
+              //  } else {
+              //    $scope.settings.openAlertPanel('未解锁红包：恭喜您领取了10元的吃货福利，我们正在马不停蹄地为您发放卡券，预计5-10分钟送达到您账户中');
+              //  }
+              //}
               wxshare.invokeWXShare($scope.user);
             } else {
               //$window.alert(data.errMsg);
