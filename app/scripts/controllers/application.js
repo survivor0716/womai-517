@@ -67,7 +67,7 @@ angular.module('womai517App')
     };
     $scope.getToken = function () {
 
-    };
+    };;
     $bridge(function (bridge) {
       $scope.share = function () {
         var ua = $window.navigator.userAgent.toLowerCase();
